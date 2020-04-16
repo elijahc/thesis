@@ -19,7 +19,7 @@ knitr::include_graphics("img/biological_nn.png")
 Artificial units (Fig \@ref(fig:fig2-1)B) are the basic building block of artificial neural networks. Each artificial unit receives input represented as a sequence of inputs $x_i$ and each input has a corresponding synaptic weight $w_i$. The membrane potential $z$ of the artificial unit is represented by adding net dendritic input to a scalar bias term $b$ which represents intrinsic excitability. Finally, the threshold non-linear response of biological neurons is captured by passing the units membrane potential $z$ through an activation function $g$ which gives the unit output firing rate, or “activation”,  $a$.
 
 $$
-a_j = g(z_j) = g(x_i \cdot w_{i,j} + b_j)
+a = g(z) = g(\sum_{i}{w_i x_i}+b)
 $$
 
 ## Layers {#sec:layers}
@@ -54,7 +54,11 @@ Training an ANN model using machine learning typically requires three components
 
 ### All-to-all {#sec:all2all}
 
-All-to-all layers are the simplest and oldest of layer architectures. In all-to-all layers, every input is connected to every unit in the layer. We can describe this ANN layer mathematically by vectorizing the previous equation wherein inputs and output firing rates are represented as vectors $(x_i,a_j)$ instead of scalars $(x,a)$:
+All-to-all layers are the simplest and oldest of layer architectures. In all-to-all layers, every input is connected to every unit in the layer. We can modify the previous equation to describe the entire layer instead of a single unit. Mathematically, we represent the layers input and ouput firing rates as a vector of the individal unit activations $(a_j)$ where each element $j$ of the vector is a single units activation. By extension, we change the inputs from a scalar to the vector $(x_i)$ where each element $i$ is an input. Multiplying the input $x_i$ by the weight matrix $w_{i,j}$ gives an activation of output of length $j$:
+
+$$
+a_j = g(z_j) = g(x_i \cdot w_{i,j} + b_j)
+$$
 
 ## Loss Function {#sec:lossfunc}
 
