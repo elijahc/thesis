@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>CHAPTER 1 Introduction | Computational Models of Neural Encoding in Vision and Neurostimulation</title>
-  <meta name="description" content="CHAPTER 1 Introduction | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <title>CH 1 Introduction | Computational Models of Neural Encoding in Vision and Neurostimulation</title>
+  <meta name="description" content="CH 1 Introduction | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="CHAPTER 1 Introduction | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta property="og:title" content="CH 1 Introduction | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="CHAPTER 1 Introduction | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta name="twitter:title" content="CH 1 Introduction | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   
   
   
@@ -89,16 +89,16 @@
 <li class="chapter" data-level="2.7" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:optimizers"><i class="fa fa-check"></i><b>2.7</b> Optimizers</a></li>
 <li class="chapter" data-level="2.8" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:ch2summary"><i class="fa fa-check"></i><b>2.8</b> Summary</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="ch3-jsr.html"><a href="ch3-jsr.html"><i class="fa fa-check"></i><b>3</b> PREDICTING SLEEP STATE IN HUMAN PD PATIENTS</a>
+<li class="chapter" data-level="3" data-path="ch3-jsr.html"><a href="ch3-jsr.html"><i class="fa fa-check"></i><b>3</b> Predicting sleep state in human PD patients</a>
 <ul>
 <li class="chapter" data-level="" data-path="ch3-jsr.html"><a href="ch3-jsr.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="ch-vae.html"><a href="ch-vae.html"><i class="fa fa-check"></i><b>4</b> MODELS OF THE VENTRAL STREAM THAT CATEGORIZE AND VISUALIZE IMAGES</a>
+<li class="chapter" data-level="4" data-path="ch-vae.html"><a href="ch-vae.html"><i class="fa fa-check"></i><b>4</b> Models of the ventral stream that visualize and categorize images</a>
 <ul>
 <li class="chapter" data-level="" data-path="ch-vae.html"><a href="ch-vae.html#abstract-1"><i class="fa fa-check"></i>Abstract</a></li>
 <li class="chapter" data-level="4.1" data-path="ch-vae.html"><a href="ch-vae.html#materials-and-methods"><i class="fa fa-check"></i><b>4.1</b> Materials and Methods</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="ch5-jov.html"><a href="ch5-jov.html"><i class="fa fa-check"></i><b>5</b> PREDICTING SINGLE NEURUON RESPONSES IN MACAQUE V1</a>
+<li class="chapter" data-level="5" data-path="ch5-jov.html"><a href="ch5-jov.html"><i class="fa fa-check"></i><b>5</b> Predicting single unit responses in macaque V1</a>
 <ul>
 <li class="chapter" data-level="" data-path="ch5-jov.html"><a href="ch5-jov.html#abstract-2"><i class="fa fa-check"></i>Abstract</a></li>
 <li class="chapter" data-level="5.1" data-path="ch5-jov.html"><a href="ch5-jov.html#introduction"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
@@ -126,7 +126,7 @@
 
             <section class="normal" id="section-">
 <div id="ch:intro" class="section level1" number="1">
-<h1><span class="header-section-number">CHAPTER 1</span> Introduction</h1>
+<h1><span class="header-section-number">CH 1</span> Introduction</h1>
 <p>Neurological and psychiatric disease represent a significant societal burden in both advanced and developing countries <span class="citation">(Collins et al. <a href="references.html#ref-Collins:2011ja" role="doc-biblioref">2011</a>)</span> and there is a significant need for more effective treatments.
 Recent advances in brain stimulation and recording technology have enabled development of long-desired treatment options for many of these diseases in the form of implantable devices that directly stimulate populations of neurons.
 Deep brain stimulation (DBS) is one such implantable device wherein patients receive electrical pulses via electrodes that have been implanted in the brain to mitigate their disease symptoms.
@@ -148,6 +148,22 @@ Another group of implantable neurostimulators are neural prosthetics, such as co
 LNP combines a linear spatial filter with a single static non-linearity.
 The LNP model captured X variance for white noise stimuli but it doesn’t generalize to natural image stimuli.
 Generalized Linear Model’s (GLM) (Pillow et al., 2008) improve prediction accuracy by accounting for interactions between RGC’s and substituting the spatial receptive field with a spatiotemporal receptive field.</p>
+</div>
+<div id="sec:topdown" class="section level3" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Top-down neural encoding models</h3>
+<p>The genome likely has insufficient capacity for specifying every neuronal connection (synapse) (Zador, 2019) so what mechanisms ensure that neurons are connected correctly?
+This has recently been referred to as the “brain wiring problem” (Hassan and Hiesinger, 2015) and we’ll be looking specifically at how synaptic wiring is determined in visual cortex.
+Before the eyes even open, molecular interactions and spontaneous activity of retinal ganglion cells (RGC’s) guide development of the initial “coarse” connectivity between retinal ganglion cells in the eye, neurons of the lateral geniculate nucleus in thalamus (LGN) and primary visual cortex (V1) (Del Rio and Feller, 2006; Katz and Shatz, 1996).
+After this retinotopic map is established, synaptic connectivity continues refinement but requires environmental stimuli (Pietro Berkes et al., 2011). Identifying this “unifying principle” or computational goal (as Marr would say) that guides stimuli-dependent refinement of connectivity would help explain the structure of visual representations in V1 and beyond.</p>
+<div id="sec:sparsecoding" class="section level4" number="1.2.2.1">
+<h4><span class="header-section-number">1.2.2.1</span> Sparse coding</h4>
+<p>Shortly after the discovery of simple and complex cells (Hubel and Wiesel, 1959), Horace Barlow proposed efficient coding (Barlow, 1961) as an explanation for the computations performed by neural circuits in sensory cortex. The efficient coding hypothesis posits that the overarching goal of sensory processing is to reduce the high information redundancy in stimuli from the physical environment. This view was strengthened by findings that the Gabor-like receptive fields of simple cells are an optimal basis set for natural scenes when optimizing for 1) representation sparsity and 2) image reconstruction (D. Field, 1987; Olshausen and D. J. Field, 1996) . Due to the highly metabolic nature of neurons, sparse coding was proposed as an alternative goal which has the added benefit of being metabolically and information efficient (Levy and Baxter, 1996). Sparse coding models were particularly influential after successfully predicting aspects of neural computations in retina (Atick and Redlich, 1992), thalamus (Dan et al., 1996) and primary visual cortex (V1) (Olshausen and D. J. Field, 1996).</p>
+<p>Despite some modest successes at explaining the complex response properties of V2 (Lee et al., 2008; Olshausen et al., 2001) subsequent findings (Pietro Berkes et al., 2009; Willmore et al., 2011) have challenged the primacy of coding efficiency for explaining representations in higher visual areas. An informal definition of Shannon redundancy is the “wasted space” in a channel used in transmitting data. Most mammals have vastly more photoreceptors than fibers in the optic tract (Figure 1 left) where efficient coding could explain retinal coding as reducing redundancy to cross the compressed data channel of the optic fiber. In contrast, anatomical evidence indicate that redundancy probably increases as the channel goes from 106 retinal ganglion cells to the 109 neurons in primary visual cortex (Figure 1) (Barlow, 2001; Felleman and Van Essen, 1991).</p>
+</div>
+<div id="sec:goaldirected" class="section level4" number="1.2.2.2">
+<h4><span class="header-section-number">1.2.2.2</span> Goal-directed convolutional neural networks</h4>
+<p>Barlow, when reflecting later on his original idea (Barlow, 2001) makes a prescient statement, perhaps without knowing it: “We now need to step back and take a more global view of the brain’s task in order to see what lies behind the importance of recognizing redundancy”. Neural networks which optimize behaviorally relevant tasks(Yamins et al., 2014) have shown state of the art performance at predicting neuronal activity across the ventral visual stream.</p>
+</div>
 </div>
 </div>
 <div id="sec:ch1summary" class="section level2" number="1.3">

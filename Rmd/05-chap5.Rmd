@@ -3,7 +3,7 @@ chapter: 5
 knit: "bookdown::render_book"
 ---
 
-# PREDICTING SINGLE NEURUON RESPONSES IN MACAQUE V1 {#ch5:jov}
+# Predicting single unit responses in macaque V1 {#ch5:jov}
 
 > The contents of this chapter are available in [Using deep learning to probe the neural code for images in primary visual cortex](https://doi.org/10.1167/19.4.29)^[This chapter was previously published in [@Kindel:2019et] _Journal of Vision_ and is included with permission from the copyright holder]
 
