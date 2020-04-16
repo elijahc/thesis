@@ -9,21 +9,21 @@ bookdown::gitbook:
     toc:
       collapse: none
       before: |
-        <li><strong><a href="./">Temporal tidy tools</a></strong></li>
+        <li><strong><a href="./">Neural Encoding Models</a></strong></li>
       after: |
         <li><strong><a href="https://github.com/rstudio/bookdown" target="blank">Proudly published with bookdown</a></strong></li>
     edit: https://github.com/elijahc/thesis/edit/master/%s
     download: no
     sharing: no
-# bookdown::pdf_book:
-#   template: template/monashthesis.tex
-#   dev: "pdf"
-#   fig_caption: yes
-#   fig_height: 3.8
-#   fig_width: 6.3
-#   keep_tex: no
-#   number_sections: yes
-#   pandoc_args: [
-#     "--top-level-division=chapter"
-#   ]
-#   citation_package: biblatex
+bookdown::pdf_book:
+  template: templates/ucdenverthesis.tex
+  dev: "pdf"
+  fig_caption: yes
+  fig_height: 3.8
+  fig_width: 6.3
+  keep_tex: no
+  number_sections: yes
+  pandoc_args: [
+    "--top-level-division=chapter"
+  ]
+  citation_package: biblatex

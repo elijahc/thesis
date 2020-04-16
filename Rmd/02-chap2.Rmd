@@ -16,11 +16,12 @@ Artificial units (Fig \@ref(fig:fig2-1)B) are the basic building block of artifi
 $$
 a_j = g(z_j) = g(x_i \cdot w_{i,j} + b_j)
 $$
+
 ## Layers {#sec:layers}
 
 Just as the brain is comprised of more than one neuron, most models make use of many artificial units. Similar to the laminar organization of the neocortex, artificial neural networks (ANN) group individual units together in layers (Fig \@ref(fig:fig2-1)C). The artificial units within a layer collectively operate on a shared input and the layers output consists the collective activations of its constituent artificial units. ANN layers in a model between the inputs (x) and final outputs (y) are often referred to as “hidden” layers. The layers of an ANN are often considered analogous to a population of neurons in regions of the brain which perform similar functions. For instance, primary visual cortex (V1) contain a population of neurons which receive visual inputs from the retina (relayed by LGN). As a population of neurons, V1 processes this visual input and this processed visual information is then relayed to area V2 for subsequent processing.
 
-```{r fig2-1, echo=FALSE, message=FALSE, out.width = '75%', fig.cap="Real neurons and artificial units"}
+```{r fig2-1, echo=FALSE, message=FALSE, fig.align='center', out.width = '75%', fig.cap="Real neurons and artificial units"}
 
 knitr::include_graphics("img/figure_2.1v2.png")
 
@@ -72,3 +73,29 @@ To illustrate this process, we will derive it for a simple 2-layer ANN. For simp
 $$
 a_l = g(a_{l-1} \cdot W_l + b_l)
 $$
+
+### Forward Pass {#sec:fwdpass}
+
+First, we pass a batch of training example inputs ($x$) through the model to get a batch of output classifications ($\hat{y}$). Given our simple feedforward layer defined above, the full equation for the models output is given by:
+
+$$
+\hat{y} = g(W_2 \cdot g(W_1 \cdot x +b_1) + b_2)
+$$
+
+Our loss function $J$ defines how to evaluate the model’s performance as a function of the model’s predicted and target values. The target value is also sometimes referred to as the teaching signal, as it’s used to teach the model the correct output for a given input. For this example, we’ll use sum-squared-error:
+
+$$
+J(y,\hat{y}) = \sum (y-\hat{y})^2
+$$
+
+### Backpropagation {#sec:backprop}
+
+To derive the gradient of the loss function with respect to the model parameters ($\nabla_{\theta} J$) we take a partial derivative of the objective function with respect to the models parameters:
+
+$$
+\nabla_{\theta} J = \frac{\partial J(\theta ; y, \hat{y})}{\partial \theta}
+$$
+
+## Optimizers {#sec:optimizers}
+
+Once we know the gradient of each weight with respect to the loss, we simply need to adjust the weights of the model in the direction specified by the weight gradient. Continually descending the gradient of the loss function should theoretically result in the optimal weights for performing the model’s task.

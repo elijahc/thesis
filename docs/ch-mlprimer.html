@@ -80,18 +80,24 @@
 <li class="chapter" data-level="2" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html"><i class="fa fa-check"></i><b>2</b> MACHINE LEARNING AND COMPUTATIONAL NEUROSCIENCE</a>
 <ul>
 <li class="chapter" data-level="2.1" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:artificialunits"><i class="fa fa-check"></i><b>2.1</b> Artificial Units</a></li>
-<li class="chapter" data-level="2.2" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:modarchetypes"><i class="fa fa-check"></i><b>2.2</b> Model Archetypes</a>
+<li class="chapter" data-level="2.2" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:layers"><i class="fa fa-check"></i><b>2.2</b> Layers</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:modarchetypes"><i class="fa fa-check"></i><b>2.3</b> Model Archetypes</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:classifiers"><i class="fa fa-check"></i><b>2.2.1</b> Classifiers</a></li>
-<li class="chapter" data-level="2.2.2" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:regressors"><i class="fa fa-check"></i><b>2.2.2</b> Regressors</a></li>
-<li class="chapter" data-level="2.2.3" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:autoencoders"><i class="fa fa-check"></i><b>2.2.3</b> Autoencoders</a></li>
+<li class="chapter" data-level="2.3.1" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:classifiers"><i class="fa fa-check"></i><b>2.3.1</b> Classifiers</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:regressors"><i class="fa fa-check"></i><b>2.3.2</b> Regressors</a></li>
+<li class="chapter" data-level="2.3.3" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:autoencoders"><i class="fa fa-check"></i><b>2.3.3</b> Autoencoders</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:architectures"><i class="fa fa-check"></i><b>2.3</b> Layer Architectures</a>
+<li class="chapter" data-level="2.4" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:architectures"><i class="fa fa-check"></i><b>2.4</b> Layer Architectures</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:all2all"><i class="fa fa-check"></i><b>2.3.1</b> All-to-all</a></li>
+<li class="chapter" data-level="2.4.1" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:all2all"><i class="fa fa-check"></i><b>2.4.1</b> All-to-all</a></li>
 </ul></li>
-<li class="chapter" data-level="2.4" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:lossfunc"><i class="fa fa-check"></i><b>2.4</b> Loss Function</a></li>
-<li class="chapter" data-level="2.5" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:learningrules"><i class="fa fa-check"></i><b>2.5</b> Learning Rules</a></li>
+<li class="chapter" data-level="2.5" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:lossfunc"><i class="fa fa-check"></i><b>2.5</b> Loss Function</a></li>
+<li class="chapter" data-level="2.6" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:learningrules"><i class="fa fa-check"></i><b>2.6</b> Learning Rules</a>
+<ul>
+<li class="chapter" data-level="2.6.1" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:fwdpass"><i class="fa fa-check"></i><b>2.6.1</b> Forward Pass</a></li>
+<li class="chapter" data-level="2.6.2" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:backprop"><i class="fa fa-check"></i><b>2.6.2</b> Backpropagation</a></li>
+</ul></li>
+<li class="chapter" data-level="2.7" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:optimizers"><i class="fa fa-check"></i><b>2.7</b> Optimizers</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>REFERENCES</a></li>
 </ul>
@@ -120,50 +126,52 @@ McCulloch and Pitts neurons became the fundamental unit of artificial neural net
 <p>Artificial units (Fig <a href="ch-mlprimer.html#fig:fig2-1">2.1</a>B) are the basic building block of artificial neural networks. Each artificial unit receives input represented as a sequence of inputs <span class="math inline">\(x_i\)</span> and each input has a corresponding synaptic weight <span class="math inline">\(w_i\)</span>. The membrane potential <span class="math inline">\(z\)</span> of the artificial unit is represented by adding net dendritic input to a scalar bias term <span class="math inline">\(b\)</span> which represents intrinsic excitability. Finally, the threshold non-linear response of biological neurons is captured by passing the units membrane potential <span class="math inline">\(z\)</span> through an activation function <span class="math inline">\(g\)</span> which gives the unit output firing rate, or “activation”, <span class="math inline">\(a\)</span>.</p>
 <p><span class="math display">\[
 a_j = g(z_j) = g(x_i \cdot w_{i,j} + b_j)
-\]</span>
-## Layers {#sec:layers}</p>
+\]</span></p>
+</div>
+<div id="sec:layers" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Layers</h2>
 <p>Just as the brain is comprised of more than one neuron, most models make use of many artificial units. Similar to the laminar organization of the neocortex, artificial neural networks (ANN) group individual units together in layers (Fig <a href="ch-mlprimer.html#fig:fig2-1">2.1</a>C). The artificial units within a layer collectively operate on a shared input and the layers output consists the collective activations of its constituent artificial units. ANN layers in a model between the inputs (x) and final outputs (y) are often referred to as “hidden” layers. The layers of an ANN are often considered analogous to a population of neurons in regions of the brain which perform similar functions. For instance, primary visual cortex (V1) contain a population of neurons which receive visual inputs from the retina (relayed by LGN). As a population of neurons, V1 processes this visual input and this processed visual information is then relayed to area V2 for subsequent processing.</p>
-<div class="figure"><span id="fig:fig2-1"></span>
+<div class="figure" style="text-align: center"><span id="fig:fig2-1"></span>
 <img src="img/figure_2.1v2.png" alt="Real neurons and artificial units" width="75%" />
 <p class="caption">
 Figure 2.1: Real neurons and artificial units
 </p>
 </div>
 </div>
-<div id="sec:modarchetypes" class="section level2" number="2.2">
-<h2><span class="header-section-number">2.2</span> Model Archetypes</h2>
+<div id="sec:modarchetypes" class="section level2" number="2.3">
+<h2><span class="header-section-number">2.3</span> Model Archetypes</h2>
 <p>Deep artificial neural network models typically have multiples of these layers stacked one after the other, such that the outputs of one layer become the inputs for the subsequent layer. Deep ANN models are often constructed for a specific purpose, or to perform a specific task. Models are often categorized based on purported task and the structure of the inputs it uses to accomplish this task. For instance, many computer vision researchers train models which, given an image, categorize the object in the image.</p>
-<div id="sec:classifiers" class="section level3" number="2.2.1">
-<h3><span class="header-section-number">2.2.1</span> Classifiers</h3>
+<div id="sec:classifiers" class="section level3" number="2.3.1">
+<h3><span class="header-section-number">2.3.1</span> Classifiers</h3>
 <p>Classifiers are a class of models that attempt to predict the best category that describes the input from a discrete number of categories. For example, a classic machine learning exercise has been to train a model to predict the category of an object depicted in an image. MNIST, Fashion-MNIST <span class="citation">(Xiao, Rasul, and Vollgraf <a href="#ref-Xiao:2017wj" role="doc-biblioref">2017</a>)</span>, CIFAR10/100 <span class="citation">(Krizhevsky and Hinton <a href="#ref-Krizhevsky:2009tr" role="doc-biblioref">2009</a>)</span> and ImageNet are examples of large labeled image datasets that have been historically popular for evaluating a model’s classification performance. Classifiers are not specific image tasks and can be used on any discrete labeling task. For instance, in Chapter 3 we trained an ANN classifier to predict behavioral sleep state in human PD patients based on features from local field potential spectral decompositions.</p>
 </div>
-<div id="sec:regressors" class="section level3" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> Regressors</h3>
+<div id="sec:regressors" class="section level3" number="2.3.2">
+<h3><span class="header-section-number">2.3.2</span> Regressors</h3>
 <p>Regressors use their inputs and attempt to predict a continuous value purportedly derived from the input. Recently, neural network models have been used as functional models of the visual system. These models use images to predict neuronal firing rates observed in animals after viewing the same image and has been used to successfully for predicting stimulus evoked activity in retina <span class="citation">(McIntosh et al. <a href="#ref-NIPS2016_6388" role="doc-biblioref">2016</a>)</span> and Inferior Temporal cortex (IT) <span class="citation">(Yamins et al. <a href="#ref-Yamins:2014gi" role="doc-biblioref">2014</a>)</span>. We successfully utilized a convolutional neural network regressor model to predict firing responses for populations of neurons in macaque primary visual cortex (V1) which is the subject of Chapter 5.</p>
 </div>
-<div id="sec:autoencoders" class="section level3" number="2.2.3">
-<h3><span class="header-section-number">2.2.3</span> Autoencoders</h3>
+<div id="sec:autoencoders" class="section level3" number="2.3.3">
+<h3><span class="header-section-number">2.3.3</span> Autoencoders</h3>
 <p>Autoencoders are a special class of models which attempt to predict their inputs. This is a trivial task if each the intermediate hidden layers have similar dimensionality as the input and output; the model can simply learn to copy the input into the output. Instead, these models are more often configured to have far few dimensions in their hidden layers. In this configuration the only way to successfully perform the task is to exploit information redundancy in the input to compress the input while retaining as much information as possible.</p>
 </div>
 </div>
-<div id="sec:architectures" class="section level2" number="2.3">
-<h2><span class="header-section-number">2.3</span> Layer Architectures</h2>
+<div id="sec:architectures" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Layer Architectures</h2>
 <p>Training an ANN model using machine learning typically requires three components. These components are 1) the model’s layer architecture, 2) objective or loss function, and 3) the models learning rules. The layer architecture of a model explicitly specifies how the artificial units, organized in layers, are connected from input to output. There are a wide variety of layers to choose from when constructing a deep ANN but for the sake of brevity only descriptions of layer architectures used in this work will be provided.</p>
-<div id="sec:all2all" class="section level3" number="2.3.1">
-<h3><span class="header-section-number">2.3.1</span> All-to-all</h3>
+<div id="sec:all2all" class="section level3" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> All-to-all</h3>
 <p>All-to-all layers are the simplest and oldest of layer architectures. In all-to-all layers, every input is connected to every unit in the layer. We can describe this ANN layer mathematically by vectorizing the previous equation wherein inputs and output firing rates are represented as vectors <span class="math inline">\((x_i,a_j)\)</span> instead of scalars <span class="math inline">\((x,a)\)</span>:</p>
 </div>
 </div>
-<div id="sec:lossfunc" class="section level2" number="2.4">
-<h2><span class="header-section-number">2.4</span> Loss Function</h2>
+<div id="sec:lossfunc" class="section level2" number="2.5">
+<h2><span class="header-section-number">2.5</span> Loss Function</h2>
 <p>Loss or cost functions ( <span class="math inline">\(J\)</span> ) are mathematical definitions of the goal of the learning system. The loss function is used to calculate a scalar metric quantifying the models’ task performance as a function of its output. Loss functions can take any form mathematically as long as they are 1) differentiable and 2) convex. Reconstruction error (sum of squared pixel errors) were traditionally used for training models which attempt to generate a particular image. We can express the sum squared pixel loss between an image <span class="math inline">\(\hat{y}\)</span> and the target reference <span class="math inline">\(y\)</span> as:</p>
 <p><span class="math display">\[
 J(y,\hat{y}) = \sum (y-\hat{y})^2
 \]</span></p>
 <p>Objective functions don’t have to depend on a particular dataset or task. For instance, sparse coding models use activation sparseness and reconstruction error as their objective function to learn sparse representations. When minimized over images of natural scenes they learn a set of basis functions that resemble localized receptive fields of simple cells in primary visual cortex <span class="citation">(Olshausen and Field <a href="#ref-Olshausen:1996kc" role="doc-biblioref">1996</a>)</span></p>
 </div>
-<div id="sec:learningrules" class="section level2" number="2.5">
-<h2><span class="header-section-number">2.5</span> Learning Rules</h2>
+<div id="sec:learningrules" class="section level2" number="2.6">
+<h2><span class="header-section-number">2.6</span> Learning Rules</h2>
 <p>Once a model’s architecture and objective function are specified “training” it is simply optimizing the parameters of each layer to improve its loss. The algorithm for how to iteratively update the ANN model parameters to minimize loss was first demonstrated by Rumelhart <span class="citation">(Rumelhart, Hinton, and Williams <a href="#ref-Rumelhart:1986er" role="doc-biblioref">1986</a>)</span> and it is a simple 2 step process:</p>
 <ol style="list-style-type: decimal">
 <li>Forward pass: Use a batch of <span class="math inline">\(x\)</span> input values to calculate the predicted outputs <span class="math inline">\(\hat{y}\)</span></li>
@@ -173,6 +181,28 @@ J(y,\hat{y}) = \sum (y-\hat{y})^2
 <p><span class="math display">\[
 a_l = g(a_{l-1} \cdot W_l + b_l)
 \]</span></p>
+<div id="sec:fwdpass" class="section level3" number="2.6.1">
+<h3><span class="header-section-number">2.6.1</span> Forward Pass</h3>
+<p>First, we pass a batch of training example inputs (<span class="math inline">\(x\)</span>) through the model to get a batch of output classifications (<span class="math inline">\(\hat{y}\)</span>). Given our simple feedforward layer defined above, the full equation for the models output is given by:</p>
+<p><span class="math display">\[
+\hat{y} = g(W_2 \cdot g(W_1 \cdot x +b_1) + b_2)
+\]</span></p>
+<p>Our loss function <span class="math inline">\(J\)</span> defines how to evaluate the model’s performance as a function of the model’s predicted and target values. The target value is also sometimes referred to as the teaching signal, as it’s used to teach the model the correct output for a given input. For this example, we’ll use sum-squared-error:</p>
+<p><span class="math display">\[
+J(y,\hat{y}) = \sum (y-\hat{y})^2
+\]</span></p>
+</div>
+<div id="sec:backprop" class="section level3" number="2.6.2">
+<h3><span class="header-section-number">2.6.2</span> Backpropagation</h3>
+<p>To derive the gradient of the loss function with respect to the model parameters (<span class="math inline">\(\nabla_{\theta} J\)</span>) we take a partial derivative of the objective function with respect to the models parameters:</p>
+<p><span class="math display">\[
+\nabla_{\theta} J = \frac{\partial J(\theta ; y, \hat{y})}{\partial \theta}
+\]</span></p>
+</div>
+</div>
+<div id="sec:optimizers" class="section level2" number="2.7">
+<h2><span class="header-section-number">2.7</span> Optimizers</h2>
+<p>Once we know the gradient of each weight with respect to the loss, we simply need to adjust the weights of the model in the direction specified by the weight gradient. Continually descending the gradient of the loss function should theoretically result in the optimal weights for performing the model’s task.</p>
 
 <!-- # --- -->
 <!-- # chapter: 7 -->
