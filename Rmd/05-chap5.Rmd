@@ -1,0 +1,30 @@
+---
+chapter: 5
+knit: "bookdown::render_book"
+---
+
+# PREDICTING SINGLE NEURUON RESPONSES IN MACAQUE V1 {#ch5:jov}
+
+* The contents of this chapter are available from the directly from the [publisher](https://doi.org/10.1167/19.4.29)^[This chapter was previously published in [@Kindel:2019et] _Journal of Vision_ and is included with permission from the copyright holder]
+
+* [[Source Code](https://github.com/jzlab/v1_predictor)]
+
+
+## Abstract {-}
+
+Primary visual cortex (V1) is the first stage of cortical image processing, and major effort in systems neuroscience is devoted to understanding how it encodes information about visual stimuli. Within V1, many neurons respond selectively to edges of a given preferred orientation: These are known as either simple or complex cells. Other neurons respond to localized center–surround image features. Still others respond selectively to certain image stimuli, but the specific features that excite them are unknown. Moreover, even for the simple and complex cells—the best-understood V1 neurons—it is challenging to predict how they will respond to natural image stimuli. Thus, there are important gaps in our understanding of how V1 encodes images. To fill this gap, we trained deep convolutional neural networks to predict the firing rates of V1 neurons in response to natural image stimuli, and we find that the predicted firing rates are highly correlated ($CC_{norm}$ = 0.556 ± 0.01) with the neurons' actual firing rates over a population of 355 neurons. This performance value is quoted for all neurons, with no selection filter. Performance is better for more active neurons: When evaluated only on neurons with mean firing rates above 5 Hz, our predictors achieve correlations of $CC_{norm}$ = 0.69 ± 0.01 with the neurons' true firing rates. We find that the firing rates of both orientation-selective and non-orientation-selective neurons can be predicted with high accuracy. Additionally, we use a variety of models to benchmark performance and find that our convolutional neural-network model makes more accurate predictions.
+
+## Methods
+
+### Experimental Data
+
+Neural activity was recorded in monkeys' V1 as they were shown a series of images (Fig \@ref(fig:5-1)A). The image set contains 270 circularly cropped natural images (Fig \@ref(fig:5-1)B). (C) The response of a single neuron over repeated presentations of an image. Ticks indicate the neuron's spiking; each row corresponds to a different image-presentation trial. During the response window, the firing rate is computed and then averaged over trials to yield the average response $A_{n,i}$ used in our analysis. (D) The neuron responds to image stimuli with a latency of ∼50 ms from the image onset at t = 0, as seen in the peristimulus time histogram (firing rate plotted against time, averaged over all 270 images).
+
+
+```{r 5-1, echo=FALSE, message=FALSE, fig.align='center', out.width = '75%', fig.cap="Experimental data collection and processing."}
+
+knitr::include_graphics("img/figure_5.1.png")
+
+```
+
+

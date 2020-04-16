@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>REFERENCES | Computational Models of Neural Encoding in Vision and Neurostimulation</title>
-  <meta name="description" content="REFERENCES | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <title>Chapter 5 PREDICTING SINGLE NEURUON RESPONSES IN MACAQUE V1 | Computational Models of Neural Encoding in Vision and Neurostimulation</title>
+  <meta name="description" content="Chapter 5 PREDICTING SINGLE NEURUON RESPONSES IN MACAQUE V1 | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="REFERENCES | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta property="og:title" content="Chapter 5 PREDICTING SINGLE NEURUON RESPONSES IN MACAQUE V1 | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="REFERENCES | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta name="twitter:title" content="Chapter 5 PREDICTING SINGLE NEURUON RESPONSES IN MACAQUE V1 | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ch5-jov.html"/>
-
+<link rel="prev" href="ch4-intro.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -137,62 +137,48 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered" number="">
-<h1>REFERENCES</h1>
-
-<div id="refs" class="references hanging-indent">
-<div>
-<p>Christensen, Elijah, Aviva Abosch, John A Thompson, and Joel Zylberberg. 2019. “Inferring sleep stage from local field potentials recorded in the subthalamic nucleus of Parkinson’s patients.” <em>Journal of Sleep Research</em> 28 (4): e12806.</p>
+<div id="ch5:jov" class="section level1" number="5">
+<h1><span class="header-section-number">Chapter 5</span> PREDICTING SINGLE NEURUON RESPONSES IN MACAQUE V1</h1>
+<ul>
+<li><p>The contents of this chapter are available from the directly from the <a href="https://doi.org/10.1167/19.4.29">publisher</a><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p></li>
+<li><p>[<a href="https://github.com/jzlab/v1_predictor">Source Code</a>]</p></li>
+</ul>
+<div id="abstract-1" class="section level2 unnumbered" number="">
+<h2>Abstract</h2>
+<p>Primary visual cortex (V1) is the first stage of cortical image processing, and major effort in systems neuroscience is devoted to understanding how it encodes information about visual stimuli. Within V1, many neurons respond selectively to edges of a given preferred orientation: These are known as either simple or complex cells. Other neurons respond to localized center–surround image features. Still others respond selectively to certain image stimuli, but the specific features that excite them are unknown. Moreover, even for the simple and complex cells—the best-understood V1 neurons—it is challenging to predict how they will respond to natural image stimuli. Thus, there are important gaps in our understanding of how V1 encodes images. To fill this gap, we trained deep convolutional neural networks to predict the firing rates of V1 neurons in response to natural image stimuli, and we find that the predicted firing rates are highly correlated (<span class="math inline">\(CC_{norm}\)</span> = 0.556 ± 0.01) with the neurons’ actual firing rates over a population of 355 neurons. This performance value is quoted for all neurons, with no selection filter. Performance is better for more active neurons: When evaluated only on neurons with mean firing rates above 5 Hz, our predictors achieve correlations of <span class="math inline">\(CC_{norm}\)</span> = 0.69 ± 0.01 with the neurons’ true firing rates. We find that the firing rates of both orientation-selective and non-orientation-selective neurons can be predicted with high accuracy. Additionally, we use a variety of models to benchmark performance and find that our convolutional neural-network model makes more accurate predictions.</p>
 </div>
-<div>
-<p>Collins, Pamela Y, Vikram Patel, Sarah S Joestl, Dana March, Thomas R Insel, Abdallah S Daar, Scientific Advisory Board and the Executive Committee of the Grand Challenges on Global Mental Health, et al. 2011. “Grand challenges in global mental health.” <em>Nature</em> 475 (7354): 27–30.</p>
-</div>
-<div>
-<p>Holtzheimer, Paul E, and Helen S Mayberg. 2011. “Deep brain stimulation for psychiatric disorders.” <em>Annual Review of Neuroscience</em> 34 (1): 289–307.</p>
-</div>
-<div>
-<p>Kindel, William F, Elijah D Christensen, and Joel Zylberberg. 2019. “Using deep learning to probe the neural code for images in primary visual cortex.” <em>Journal of Vision</em> 19 (4): 29.</p>
-</div>
-<div>
-<p>Krizhevsky, A, and G Hinton. 2009. “Learning multiple layers of features from tiny images.”</p>
-</div>
-<div>
-<p>McCulloch, W S, and W Pitts. 1943. <em>A logical calculus of the ideas immanent in nervous activity.</em> Vol. 52.</p>
-</div>
-<div>
-<p>McIntosh, Lane T, Niru Maheswaranathan, Aran Nayebi, Surya Ganguli, and Stephen A Baccus. 2016. “Deep Learning Models of the Retinal Response to Natural Scenes.” <em>Advances in Neural Information Processing Systems</em> 29: 1369–77.</p>
-</div>
-<div>
-<p>Olshausen, B A, and D J Field. 1996. “Emergence of simple-cell receptive field properties by learning a sparse code for natural images.” <em>Nature</em> 381 (6583): 607–9.</p>
-</div>
-<div>
-<p>Perlmutter, Joel S, and Jonathan W Mink. 2006. “Deep brain stimulation.” <em>Annual Review of Neuroscience</em> 29: 229–57.</p>
-</div>
-<div>
-<p>Rumelhart, David E, Geoffrey E Hinton, and Ronald J Williams. 1986. “Learning representations by back-propagating errors.” <em>Nature</em> 323 (6088): 533–36.</p>
-</div>
-<div>
-<p>Xiao, Han, Kashif Rasul, and Roland Vollgraf. 2017. “Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms,” August. <a href="http://arxiv.org/abs/1708.07747">http://arxiv.org/abs/1708.07747</a>.</p>
-</div>
-<div>
-<p>Yamins, Daniel L K, Ha Hong, Charles F Cadieu, Ethan A Solomon, Darren Seibert, and James J DiCarlo. 2014. “Performance-optimized hierarchical models predict neural responses in higher visual cortex.” <em>Proceedings of the National Academy of Sciences of the United States of America</em> 111 (23): 8619–24.</p>
-</div>
-</div>
+<div id="methods" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Methods</h2>
+<div id="experimental-data" class="section level3" number="5.1.1">
+<h3><span class="header-section-number">5.1.1</span> Experimental Data</h3>
+<p>Neural activity was recorded in monkeys’ V1 as they were shown a series of images (Fig <a href="ch5-jov.html#fig:5-1">5.1</a>A). The image set contains 270 circularly cropped natural images (Fig <a href="ch5-jov.html#fig:5-1">5.1</a>B). (C) The response of a single neuron over repeated presentations of an image. Ticks indicate the neuron’s spiking; each row corresponds to a different image-presentation trial. During the response window, the firing rate is computed and then averaged over trials to yield the average response <span class="math inline">\(A_{n,i}\)</span> used in our analysis. (D) The neuron responds to image stimuli with a latency of ∼50 ms from the image onset at t = 0, as seen in the peristimulus time histogram (firing rate plotted against time, averaged over all 270 images).</p>
+<div class="figure" style="text-align: center"><span id="fig:5-1"></span>
+<img src="img/figure_5.1.png" alt="Experimental data collection and processing." width="75%" />
+<p class="caption">
+Figure 5.1: Experimental data collection and processing.
+</p>
 </div>
 
-
-
-
-
-
-
+<!-- # --- -->
+<!-- # chapter: 7 -->
+<!-- # knit: "bookdown::render_book" -->
+<!-- # --- -->
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>This chapter was previously published in <span class="citation">(Kindel, Christensen, and Zylberberg <a href="#ref-Kindel:2019et" role="doc-biblioref">2019</a>)</span> <em>Journal of Vision</em> and is included with permission from the copyright holder<a href="ch5-jov.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="ch5-jov.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="ch4-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

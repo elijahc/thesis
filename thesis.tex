@@ -122,6 +122,63 @@ Placeholder
 \hypertarget{sec:optimizers}{%
 \section{Optimizers}\label{sec:optimizers}}
 
+\hypertarget{sec:ch2summary}{%
+\section{Summary}\label{sec:ch2summary}}
+
+\hypertarget{ch3:jsr}{%
+\chapter{PREDICTING SLEEP STATE IN HUMAN PD PATIENTS}\label{ch3:jsr}}
+
+\begin{itemize}
+\item
+  The contents of this chapter are available from the directly from the \href{https://doi.org/10.1111/jsr.12806}{publisher}\footnote{This chapter was previously published in \autocite{Christensen:2019ik} Journal of Sleep Research and is included with permission from the copyright holder}
+\item
+  {[}\href{http://www.jzlab.org/Christensen_JSleepResearch2018_LFP_ANN_DBS.pdf}{pdf}{]} {[}\href{https://github.com/jzlab/sleep_net}{Source Code}{]}
+\end{itemize}
+
+\hypertarget{abstract}{%
+\section{Abstract}\label{abstract}}
+
+Parkinson's disease (PD) is highly comorbid with sleep dysfunction. In contrast to motor symptoms, few therapeutic interventions exist to address sleep symptoms in PD. Subthalamic nucleus (STN) deep brain stimulation (DBS) treats advanced PD motor symptoms and may improve sleep architecture. As a proof of concept toward demonstrating that STN‐DBS could be used to identify sleep stages commensurate with clinician‐scored polysomnography (PSG), we developed a novel artificial neural network (ANN) that could trigger targeted stimulation in response to inferred sleep state from STN local field potentials (LFPs) recorded from implanted DBS electrodes. STN LFP recordings were collected from nine PD patients via a percutaneous cable attached to the DBS lead, during a full night's sleep (6--8 hr) with concurrent polysomnography (PSG). We trained a feedforward neural network to prospectively identify sleep stage with PSG‐level accuracy from 30‐s epochs of LFP recordings. Our model's sleep‐stage predictions match clinician‐identified sleep stage with a mean accuracy of 91\% on held‐out epochs. Furthermore, leave‐one‐group‐out analysis also demonstrates 91\% mean classification accuracy for novel subjects. These results, which classify sleep stage across a typical heterogenous sample of PD patients, may indicate spectral biomarkers for automatically scoring sleep stage in PD patients with implanted DBS devices. Further development of this model may also focus on adapting stimulation during specific sleep stages to treat targeted sleep deficits.
+
+\hypertarget{ch4:intro}{%
+\chapter{MODELS OF THE VENTRAL STREAM THAT CATEGORIZE AND VISUALIZE IMAGES}\label{ch4:intro}}
+
+\hypertarget{abstract-1}{%
+\section*{Abstract}\label{abstract-1}}
+\addcontentsline{toc}{section}{Abstract}
+
+The ventral stream (VS) of visual cortex begins in primary visual cortex (V1), ends in inferior temporal cortex (IT), and is essential for object recognition.
+Accordingly, the long-standing belief in the field is that the ventral stream could be understood as mapping visual scenes onto neuronal firing patterns that represent object identity(Felleman and Van Essen, 1991).
+Supporting that assertion, deep convolutional neural networks (DCNN's) trained to categorize objects in natural images develop intermediate representations that resemble those in primate VS(Cadieu et al., 2014; Güçlü and van Gerven, 2015; Yamins et al., 2014; Yamins and DiCarlo, 2016).
+However, several recent findings appear at odds with the object recognition hypothesis.
+VS and other visual areas are also engaged during visualization of both prior experience and novel scenes (O'Craven and Kanwisher, 2006; Stokes et al., 2009), suggesting that the VS can generate visual scenes, in addition to processing them as inputs. Furthermore, non-categorical information, about object positions, sizes, etc. is also represented with increasing explicitness in late VS areas V4 and IT(Hong et al., 2016).
+This is not necessarily expected in a ``pure'' object recognition system, as the non-categorical information is not necessary for the categorization task. Thus, these recent findings challenge the long-held object recognition hypothesis of ventral stream and raise the question: What computational objective best explains VS physiology? \autocite{Richards}
+
+To address that question, we pursued a recently-popularized approach and trained deep neural networks to perform different tasks: we then compared the trained neural networks' responses to image stimuli to those observed in neurophysiology experiments3-5,8, to see which tasks yielded models that best matched the neural data. We trained our networks to perform one of two visual tasks: a) recognize objects; or b) recognize objects while also retaining enough information about the input image to allow its reconstruction. We studied the evolution of categorical and non-categorical information representations along the visual pathway within these models, and compared that evolution with data from monkey VS. Our main finding is that neural networks optimized for task (b) provide a better match to the representation of non-categorical information in the monkey physiology data than do those optimized for task (a). This suggests that a full understanding of visual ventral stream computations might require considerations other than object recognition.
+
+\hypertarget{materials-and-methods}{%
+\section{Materials and Methods}\label{materials-and-methods}}
+
+\hypertarget{dataset-and-augmentation}{%
+\subsection{Dataset and augmentation}\label{dataset-and-augmentation}}
+
+We constructed images of clothing items superimposed at random locations over natural image backgrounds. To achieve this goal, we used all 70,000 images from the Fashion MNIST dataset, a computer vision object recognition dataset comprised of images of clothing articles from 10 different categories. We augmented this dataset by expanding the background of the image two-fold (from 28x28 pixels to 56x56 pixels) and drawing dx and dy linear pixel displacements from a uniform distribution spanning 75\% of the image field \{-11,11\}. Images were then shifted according the randomly drawn dx and dy values. After applying positional shifts, the objects were superimposed over random patches extracted from natural images from the BSDS500 natural image dataset to produce simplified natural scenes which contain categorical (1 of 10 clothing categories) and non-categorical (position shifts) variation. Random 56x56 pixel patches from the BSDS500 dataset were gray scaled before the shifted object images were added to the background patch (Fig 1A). All augmentation was performed on-line during training. That is, every position shift and natural image patch was drawn randomly every training batch instead of pre-computing shifts and backgrounds. This allows every training batch to be composed of unique examples from the dataset and prevents overfitting.
+
+\hypertarget{ch5:jov}{%
+\chapter{PREDICTING SINGLE NEURUON RESPONSES IN MACAQUE V1}\label{ch5:jov}}
+
+Placeholder
+
+\hypertarget{abstract-2}{%
+\section*{Abstract}\label{abstract-2}}
+\addcontentsline{toc}{section}{Abstract}
+
+\hypertarget{methods}{%
+\section{Methods}\label{methods}}
+
+\hypertarget{experimental-data}{%
+\subsection{Experimental Data}\label{experimental-data}}
+
 \printbibliography[heading=bibintoc]
 
 

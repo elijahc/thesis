@@ -99,3 +99,16 @@ $$
 ## Optimizers {#sec:optimizers}
 
 Once we know the gradient of each weight with respect to the loss, we simply need to adjust the weights of the model in the direction specified by the weight gradient. Continually descending the gradient of the loss function should theoretically result in the optimal weights for performing the model’s task.
+
+## Summary {#sec:ch2summary}
+
+The purpose of this chapter is not to exhaustively cover the field of machine learning but instead to serve as a brief primer of concepts and terms you will encounter in subsequent chapters. Chapter 2 uses an ANN classifier comprised of fully-connected layers to predict sleep states from LFP spectral decompositions. Chapter 3 utilizes a convolutional autoencoder/classifier hybrid model to test hypotheses about computational objectives employed in primate ventral stream visual representations. 
+Finally, Chapter 4 uses a convolutional neural network (CNN) to directly regress neuronal activity in macaque primary visual cortex.
+Hopefully, you can appreciate the similarities between artificial neural networks and the biological neural networks that inspired them. If nothing else, remember that using machine learning to train ANN models hinges on three components: 
+
+1) Model architecture 
+1) Loss function 
+1) Learning rules
+
+All three components influence both transient and final model performance.
+

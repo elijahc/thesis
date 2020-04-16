@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="ch-intro.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="ch3-jsr.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -98,6 +98,26 @@
 <li class="chapter" data-level="2.6.2" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:backprop"><i class="fa fa-check"></i><b>2.6.2</b> Backpropagation</a></li>
 </ul></li>
 <li class="chapter" data-level="2.7" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:optimizers"><i class="fa fa-check"></i><b>2.7</b> Optimizers</a></li>
+<li class="chapter" data-level="2.8" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:ch2summary"><i class="fa fa-check"></i><b>2.8</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="ch3-jsr.html"><a href="ch3-jsr.html"><i class="fa fa-check"></i><b>3</b> PREDICTING SLEEP STATE IN HUMAN PD PATIENTS</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ch3-jsr.html"><a href="ch3-jsr.html#abstract"><i class="fa fa-check"></i><b>3.1</b> Abstract</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ch4-intro.html"><a href="ch4-intro.html"><i class="fa fa-check"></i><b>4</b> MODELS OF THE VENTRAL STREAM THAT CATEGORIZE AND VISUALIZE IMAGES</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ch4-intro.html"><a href="ch4-intro.html#materials-and-methods"><i class="fa fa-check"></i><b>4.1</b> Materials and Methods</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="ch4-intro.html"><a href="ch4-intro.html#dataset-and-augmentation"><i class="fa fa-check"></i><b>4.1.1</b> Dataset and augmentation</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="ch5-jov.html"><a href="ch5-jov.html"><i class="fa fa-check"></i><b>5</b> PREDICTING SINGLE NEURUON RESPONSES IN MACAQUE V1</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch5-jov.html"><a href="ch5-jov.html#abstract-1"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="5.1" data-path="ch5-jov.html"><a href="ch5-jov.html#methods"><i class="fa fa-check"></i><b>5.1</b> Methods</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="ch5-jov.html"><a href="ch5-jov.html#experimental-data"><i class="fa fa-check"></i><b>5.1.1</b> Experimental Data</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>REFERENCES</a></li>
 </ul>
@@ -203,11 +223,19 @@ J(y,\hat{y}) = \sum (y-\hat{y})^2
 <div id="sec:optimizers" class="section level2" number="2.7">
 <h2><span class="header-section-number">2.7</span> Optimizers</h2>
 <p>Once we know the gradient of each weight with respect to the loss, we simply need to adjust the weights of the model in the direction specified by the weight gradient. Continually descending the gradient of the loss function should theoretically result in the optimal weights for performing the model’s task.</p>
+</div>
+<div id="sec:ch2summary" class="section level2" number="2.8">
+<h2><span class="header-section-number">2.8</span> Summary</h2>
+<p>The purpose of this chapter is not to exhaustively cover the field of machine learning but instead to serve as a brief primer of concepts and terms you will encounter in subsequent chapters. Chapter 2 uses an ANN classifier comprised of fully-connected layers to predict sleep states from LFP spectral decompositions. Chapter 3 utilizes a convolutional autoencoder/classifier hybrid model to test hypotheses about computational objectives employed in primate ventral stream visual representations.
+Finally, Chapter 4 uses a convolutional neural network (CNN) to directly regress neuronal activity in macaque primary visual cortex.
+Hopefully, you can appreciate the similarities between artificial neural networks and the biological neural networks that inspired them. If nothing else, remember that using machine learning to train ANN models hinges on three components:</p>
+<ol style="list-style-type: decimal">
+<li>Model architecture</li>
+<li>Loss function</li>
+<li>Learning rules</li>
+</ol>
+<p>All three components influence both transient and final model performance.</p>
 
-<!-- # --- -->
-<!-- # chapter: 7 -->
-<!-- # knit: "bookdown::render_book" -->
-<!-- # --- -->
 </div>
 </div>
 <h3>REFERENCES</h3>
@@ -240,7 +268,7 @@ J(y,\hat{y}) = \sum (y-\hat{y})^2
         </div>
       </div>
 <a href="ch-intro.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch3-jsr.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

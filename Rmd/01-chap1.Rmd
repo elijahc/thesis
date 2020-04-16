@@ -34,9 +34,12 @@ Generalized Linear Model's (GLM) (Pillow et al., 2008) improve prediction accura
 
 ## Summary {#sec:ch1summary}
 
-Chapter 2 provides an introduction to machine learning that serves as a foundation for the technical chapters that follow.
-In Chapter 3 we discuss our work decoding sleep state using neural network models trained on direct intracranial recordings of human basal ganglia. Importantly, this model generalizes decoding to patients never seen by the model and may allow new ways to leverage implantable stimulators for therapeutic benefit.
+Chapter [2](#ch:mlprimer) provides an introduction to machine learning that serves as a foundation for the technical chapters that follow.
+In Chapter 3 we discuss work decoding sleep state using neural network models trained on direct intracranial recordings of human basal ganglia.
+Importantly, this model generalizes decoding to patients never seen by the model and may allow new ways to leverage implantable stimulators for therapeutic benefit.
+
 Chapter 4 explores the effects multi-functional objectives (recognize and visualize) on both learned representations and task performance. This work was motivated by the observation that visual processing areas are reactivated during visualization tasks indicating their dual role in visual processing and regenerating stimuli. 
+
 Finally, Chapter 5 demonstrates the utility of neural network models as way to explain response properties of individual neurons. We achieved state of the art performance at predicting activity of individual neurons evoked by natural image stimuli in macaque V1 using a convolutional neural network. Furthermore, we used this model generatively to explain response properties of cells outside of Hubel and Wiesel’s simple- or complex-cell designations.
 
 

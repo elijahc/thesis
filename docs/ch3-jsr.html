@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>REFERENCES | Computational Models of Neural Encoding in Vision and Neurostimulation</title>
-  <meta name="description" content="REFERENCES | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <title>Chapter 3 PREDICTING SLEEP STATE IN HUMAN PD PATIENTS | Computational Models of Neural Encoding in Vision and Neurostimulation</title>
+  <meta name="description" content="Chapter 3 PREDICTING SLEEP STATE IN HUMAN PD PATIENTS | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="REFERENCES | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta property="og:title" content="Chapter 3 PREDICTING SLEEP STATE IN HUMAN PD PATIENTS | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="REFERENCES | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta name="twitter:title" content="Chapter 3 PREDICTING SLEEP STATE IN HUMAN PD PATIENTS | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ch5-jov.html"/>
-
+<link rel="prev" href="ch-mlprimer.html"/>
+<link rel="next" href="ch4-intro.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -137,62 +137,31 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered" number="">
-<h1>REFERENCES</h1>
+<div id="ch3:jsr" class="section level1" number="3">
+<h1><span class="header-section-number">Chapter 3</span> PREDICTING SLEEP STATE IN HUMAN PD PATIENTS</h1>
+<ul>
+<li><p>The contents of this chapter are available from the directly from the <a href="https://doi.org/10.1111/jsr.12806">publisher</a><a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p></li>
+<li><p>[<a href="http://www.jzlab.org/Christensen_JSleepResearch2018_LFP_ANN_DBS.pdf">pdf</a>] [<a href="https://github.com/jzlab/sleep_net">Source Code</a>]</p></li>
+</ul>
+<div id="abstract" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> Abstract</h2>
+<p>Parkinson’s disease (PD) is highly comorbid with sleep dysfunction. In contrast to motor symptoms, few therapeutic interventions exist to address sleep symptoms in PD. Subthalamic nucleus (STN) deep brain stimulation (DBS) treats advanced PD motor symptoms and may improve sleep architecture. As a proof of concept toward demonstrating that STN‐DBS could be used to identify sleep stages commensurate with clinician‐scored polysomnography (PSG), we developed a novel artificial neural network (ANN) that could trigger targeted stimulation in response to inferred sleep state from STN local field potentials (LFPs) recorded from implanted DBS electrodes. STN LFP recordings were collected from nine PD patients via a percutaneous cable attached to the DBS lead, during a full night’s sleep (6–8 hr) with concurrent polysomnography (PSG). We trained a feedforward neural network to prospectively identify sleep stage with PSG‐level accuracy from 30‐s epochs of LFP recordings. Our model’s sleep‐stage predictions match clinician‐identified sleep stage with a mean accuracy of 91% on held‐out epochs. Furthermore, leave‐one‐group‐out analysis also demonstrates 91% mean classification accuracy for novel subjects. These results, which classify sleep stage across a typical heterogenous sample of PD patients, may indicate spectral biomarkers for automatically scoring sleep stage in PD patients with implanted DBS devices. Further development of this model may also focus on adapting stimulation during specific sleep stages to treat targeted sleep deficits.</p>
 
-<div id="refs" class="references hanging-indent">
-<div>
-<p>Christensen, Elijah, Aviva Abosch, John A Thompson, and Joel Zylberberg. 2019. “Inferring sleep stage from local field potentials recorded in the subthalamic nucleus of Parkinson’s patients.” <em>Journal of Sleep Research</em> 28 (4): e12806.</p>
-</div>
-<div>
-<p>Collins, Pamela Y, Vikram Patel, Sarah S Joestl, Dana March, Thomas R Insel, Abdallah S Daar, Scientific Advisory Board and the Executive Committee of the Grand Challenges on Global Mental Health, et al. 2011. “Grand challenges in global mental health.” <em>Nature</em> 475 (7354): 27–30.</p>
-</div>
-<div>
-<p>Holtzheimer, Paul E, and Helen S Mayberg. 2011. “Deep brain stimulation for psychiatric disorders.” <em>Annual Review of Neuroscience</em> 34 (1): 289–307.</p>
-</div>
-<div>
-<p>Kindel, William F, Elijah D Christensen, and Joel Zylberberg. 2019. “Using deep learning to probe the neural code for images in primary visual cortex.” <em>Journal of Vision</em> 19 (4): 29.</p>
-</div>
-<div>
-<p>Krizhevsky, A, and G Hinton. 2009. “Learning multiple layers of features from tiny images.”</p>
-</div>
-<div>
-<p>McCulloch, W S, and W Pitts. 1943. <em>A logical calculus of the ideas immanent in nervous activity.</em> Vol. 52.</p>
-</div>
-<div>
-<p>McIntosh, Lane T, Niru Maheswaranathan, Aran Nayebi, Surya Ganguli, and Stephen A Baccus. 2016. “Deep Learning Models of the Retinal Response to Natural Scenes.” <em>Advances in Neural Information Processing Systems</em> 29: 1369–77.</p>
-</div>
-<div>
-<p>Olshausen, B A, and D J Field. 1996. “Emergence of simple-cell receptive field properties by learning a sparse code for natural images.” <em>Nature</em> 381 (6583): 607–9.</p>
-</div>
-<div>
-<p>Perlmutter, Joel S, and Jonathan W Mink. 2006. “Deep brain stimulation.” <em>Annual Review of Neuroscience</em> 29: 229–57.</p>
-</div>
-<div>
-<p>Rumelhart, David E, Geoffrey E Hinton, and Ronald J Williams. 1986. “Learning representations by back-propagating errors.” <em>Nature</em> 323 (6088): 533–36.</p>
-</div>
-<div>
-<p>Xiao, Han, Kashif Rasul, and Roland Vollgraf. 2017. “Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms,” August. <a href="http://arxiv.org/abs/1708.07747">http://arxiv.org/abs/1708.07747</a>.</p>
-</div>
-<div>
-<p>Yamins, Daniel L K, Ha Hong, Charles F Cadieu, Ethan A Solomon, Darren Seibert, and James J DiCarlo. 2014. “Performance-optimized hierarchical models predict neural responses in higher visual cortex.” <em>Proceedings of the National Academy of Sciences of the United States of America</em> 111 (23): 8619–24.</p>
 </div>
 </div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>This chapter was previously published in <span class="citation">(Christensen et al. <a href="#ref-Christensen:2019ik" role="doc-biblioref">2019</a>)</span> Journal of Sleep Research and is included with permission from the copyright holder<a href="ch3-jsr.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
-
-
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="ch5-jov.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="ch-mlprimer.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch4-intro.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

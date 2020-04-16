@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>REFERENCES | Computational Models of Neural Encoding in Vision and Neurostimulation</title>
-  <meta name="description" content="REFERENCES | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <title>Chapter 4 MODELS OF THE VENTRAL STREAM THAT CATEGORIZE AND VISUALIZE IMAGES | Computational Models of Neural Encoding in Vision and Neurostimulation</title>
+  <meta name="description" content="Chapter 4 MODELS OF THE VENTRAL STREAM THAT CATEGORIZE AND VISUALIZE IMAGES | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="REFERENCES | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta property="og:title" content="Chapter 4 MODELS OF THE VENTRAL STREAM THAT CATEGORIZE AND VISUALIZE IMAGES | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="REFERENCES | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta name="twitter:title" content="Chapter 4 MODELS OF THE VENTRAL STREAM THAT CATEGORIZE AND VISUALIZE IMAGES | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ch5-jov.html"/>
-
+<link rel="prev" href="ch3-jsr.html"/>
+<link rel="next" href="ch5-jov.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -137,62 +137,31 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="references" class="section level1 unnumbered" number="">
-<h1>REFERENCES</h1>
+<div id="ch4:intro" class="section level1" number="4">
+<h1><span class="header-section-number">Chapter 4</span> MODELS OF THE VENTRAL STREAM THAT CATEGORIZE AND VISUALIZE IMAGES</h1>
+<p>The ventral stream (VS) of visual cortex begins in primary visual cortex (V1), ends in inferior temporal cortex (IT), and is essential for object recognition.
+Accordingly, the long-standing belief in the field is that the ventral stream could be understood as mapping visual scenes onto neuronal firing patterns that represent object identity(Felleman and Van Essen, 1991).
+Supporting that assertion, deep convolutional neural networks (DCNN’s) trained to categorize objects in natural images develop intermediate representations that resemble those in primate VS(Cadieu et al., 2014; Güçlü and van Gerven, 2015; Yamins et al., 2014; Yamins and DiCarlo, 2016).
+However, several recent findings appear at odds with the object recognition hypothesis.
+VS and other visual areas are also engaged during visualization of both prior experience and novel scenes (O’Craven and Kanwisher, 2006; Stokes et al., 2009), suggesting that the VS can generate visual scenes, in addition to processing them as inputs. Furthermore, non-categorical information, about object positions, sizes, etc. is also represented with increasing explicitness in late VS areas V4 and IT(Hong et al., 2016).
+This is not necessarily expected in a “pure” object recognition system, as the non-categorical information is not necessary for the categorization task. Thus, these recent findings challenge the long-held object recognition hypothesis of ventral stream and raise the question: What computational objective best explains VS physiology? <span class="citation">(<span class="citeproc-not-found" data-reference-id="Richards"><strong>???</strong></span>)</span></p>
+<p>To address that question, we pursued a recently-popularized approach and trained deep neural networks to perform different tasks: we then compared the trained neural networks’ responses to image stimuli to those observed in neurophysiology experiments3-5,8, to see which tasks yielded models that best matched the neural data. We trained our networks to perform one of two visual tasks: a) recognize objects; or b) recognize objects while also retaining enough information about the input image to allow its reconstruction. We studied the evolution of categorical and non-categorical information representations along the visual pathway within these models, and compared that evolution with data from monkey VS. Our main finding is that neural networks optimized for task (b) provide a better match to the representation of non-categorical information in the monkey physiology data than do those optimized for task (a). This suggests that a full understanding of visual ventral stream computations might require considerations other than object recognition.</p>
+<div id="materials-and-methods" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> Materials and Methods</h2>
+<div id="dataset-and-augmentation" class="section level3" number="4.1.1">
+<h3><span class="header-section-number">4.1.1</span> Dataset and augmentation</h3>
+<p>We constructed images of clothing items superimposed at random locations over natural image backgrounds. To achieve this goal, we used all 70,000 images from the Fashion MNIST dataset, a computer vision object recognition dataset comprised of images of clothing articles from 10 different categories. We augmented this dataset by expanding the background of the image two-fold (from 28x28 pixels to 56x56 pixels) and drawing dx and dy linear pixel displacements from a uniform distribution spanning 75% of the image field {-11,11}. Images were then shifted according the randomly drawn dx and dy values. After applying positional shifts, the objects were superimposed over random patches extracted from natural images from the BSDS500 natural image dataset to produce simplified natural scenes which contain categorical (1 of 10 clothing categories) and non-categorical (position shifts) variation. Random 56x56 pixel patches from the BSDS500 dataset were gray scaled before the shifted object images were added to the background patch (Fig 1A). All augmentation was performed on-line during training. That is, every position shift and natural image patch was drawn randomly every training batch instead of pre-computing shifts and backgrounds. This allows every training batch to be composed of unique examples from the dataset and prevents overfitting.</p>
 
-<div id="refs" class="references hanging-indent">
-<div>
-<p>Christensen, Elijah, Aviva Abosch, John A Thompson, and Joel Zylberberg. 2019. “Inferring sleep stage from local field potentials recorded in the subthalamic nucleus of Parkinson’s patients.” <em>Journal of Sleep Research</em> 28 (4): e12806.</p>
-</div>
-<div>
-<p>Collins, Pamela Y, Vikram Patel, Sarah S Joestl, Dana March, Thomas R Insel, Abdallah S Daar, Scientific Advisory Board and the Executive Committee of the Grand Challenges on Global Mental Health, et al. 2011. “Grand challenges in global mental health.” <em>Nature</em> 475 (7354): 27–30.</p>
-</div>
-<div>
-<p>Holtzheimer, Paul E, and Helen S Mayberg. 2011. “Deep brain stimulation for psychiatric disorders.” <em>Annual Review of Neuroscience</em> 34 (1): 289–307.</p>
-</div>
-<div>
-<p>Kindel, William F, Elijah D Christensen, and Joel Zylberberg. 2019. “Using deep learning to probe the neural code for images in primary visual cortex.” <em>Journal of Vision</em> 19 (4): 29.</p>
-</div>
-<div>
-<p>Krizhevsky, A, and G Hinton. 2009. “Learning multiple layers of features from tiny images.”</p>
-</div>
-<div>
-<p>McCulloch, W S, and W Pitts. 1943. <em>A logical calculus of the ideas immanent in nervous activity.</em> Vol. 52.</p>
-</div>
-<div>
-<p>McIntosh, Lane T, Niru Maheswaranathan, Aran Nayebi, Surya Ganguli, and Stephen A Baccus. 2016. “Deep Learning Models of the Retinal Response to Natural Scenes.” <em>Advances in Neural Information Processing Systems</em> 29: 1369–77.</p>
-</div>
-<div>
-<p>Olshausen, B A, and D J Field. 1996. “Emergence of simple-cell receptive field properties by learning a sparse code for natural images.” <em>Nature</em> 381 (6583): 607–9.</p>
-</div>
-<div>
-<p>Perlmutter, Joel S, and Jonathan W Mink. 2006. “Deep brain stimulation.” <em>Annual Review of Neuroscience</em> 29: 229–57.</p>
-</div>
-<div>
-<p>Rumelhart, David E, Geoffrey E Hinton, and Ronald J Williams. 1986. “Learning representations by back-propagating errors.” <em>Nature</em> 323 (6088): 533–36.</p>
-</div>
-<div>
-<p>Xiao, Han, Kashif Rasul, and Roland Vollgraf. 2017. “Fashion-MNIST: a Novel Image Dataset for Benchmarking Machine Learning Algorithms,” August. <a href="http://arxiv.org/abs/1708.07747">http://arxiv.org/abs/1708.07747</a>.</p>
-</div>
-<div>
-<p>Yamins, Daniel L K, Ha Hong, Charles F Cadieu, Ethan A Solomon, Darren Seibert, and James J DiCarlo. 2014. “Performance-optimized hierarchical models predict neural responses in higher visual cortex.” <em>Proceedings of the National Academy of Sciences of the United States of America</em> 111 (23): 8619–24.</p>
 </div>
 </div>
 </div>
-
-
-
-
-
-
-
             </section>
 
           </div>
         </div>
       </div>
-<a href="ch5-jov.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-
+<a href="ch3-jsr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch5-jov.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
