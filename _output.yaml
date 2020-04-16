@@ -1,7 +1,7 @@
 bookdown::gitbook:
   css: templates/style.css
-  includes:
-    after_body: hypothesis.html
+  # includes:
+  #   after_body: hypothesis.html
   dev: "png"
   split_bib: no
   fig_retina: 1
