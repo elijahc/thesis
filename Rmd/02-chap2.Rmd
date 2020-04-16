@@ -3,25 +3,49 @@ chapter: 2
 knit: "bookdown::render_book"
 ---
 
-# Literature Review {#ch:litreview}
+# MACHINE LEARNING AND COMPUTATIONAL NEUROSCIENCE {#ch:mlprimer}
 
-This chapter contains a summary of the context in which your research is set. 
-
-Imagine you are writing for your fellow PhD students. Topics that are well-known to them do not have to be included here. But things that they may not know about should be included.
-
-Resist the temptation to discuss everything you've read in the last few years. And you are not writing a textbook either. This chapter is meant to provide the background necessary to understand the material in subsequent chapters. Stick to that.
-
-You will need to organize the literature review around themes, and within each theme provide a story explaining the development of ideas to date. In each theme, you should get to the point where your ideas will fit in. But leave your ideas to later chapters. This way it is clear what has been done beforehand, and what new contributions you are making to the research field.
-
-All citations should be done using markdown notation as shown below. This way, your bibliography will be compiled automatically and correctly.
+Despite the importance of computers for conducting machine learning and computational neuroscience research both fields had origins long before contemporary transistor computers. In 1943, inspired by the “all-or-none” nature of neural activity, Warren McCulloch (neuroscientist) and Walter Pitts (logician) formalized a simple mathematical definition of a neuron [@McCulloch:1943vq].
+McCulloch and Pitts neurons became the fundamental unit of artificial neural networks (ANN). These artificial neurons, often referred to as (artificial) units, reproduce several key properties of real neurons (Figure \@ref(fig:fig2-1)A ). Biological neurons receive input from many other neurons via connections (e.g. synapses) to its dendrites. These synaptic inputs are summated at the soma where the net dendritic input increases or decreases the neurons membrane potential (Fig \@ref(fig:fig2-1)A). If the net dendritic input shifts the membrane potential beyond a certain threshold (e.g. the threshold potential) the neuron will fire action potentials.
 
 
-## Exponential smoothing {#sec:expsmooth}
+## Artificial Units {#sec:artificialunits}
 
-Exponential smoothing was originally developed in the late 1950s [@Brown59;@Brown63;@Holt57;@Winters60]. Because of their computational simplicity and interpretability, they became widely used in practice.
+Artificial units (Fig \@ref(fig:fig2-1)B) are the basic building block of artificial neural networks. Each artificial unit receives input represented as a sequence of inputs $x_i$ and each input has a corresponding synaptic weight $w_i$. The membrane potential $z$ of the artificial unit is represented by adding net dendritic input to a scalar bias term $b$ which represents intrinsic excitability. Finally, the threshold non-linear response of biological neurons is captured by passing the units membrane potential $z$ through an activation function $g$ which gives the unit output firing rate, or “activation”,  $a$.
 
-Empirical studies by @MH79 and @Metal82 found little difference in forecast accuracy between exponential smoothing and ARIMA models. This made the family of exponential smoothing procedures an attractive proposition [see @CKOS01].
+$$
+a_j = g(z_j) = g(x_i \cdot w_{i,j} + b_j)
+$$
+## Layers {#sec:layers}
 
-The methods were less popular in academic circles until  @OKS97 introduced a state space formulation of some of the methods, which was extended in @HKSG02 to cover the full range of exponential smoothing methods.
+Just as the brain is comprised of more than one neuron, most models make use of many artificial units. Similar to the laminar organization of the neocortex, artificial neural networks (ANN) group individual units together in layers (Fig \@ref(fig:fig2-1)C). The artificial units within a layer collectively operate on a shared input and the layers output consists the collective activations of its constituent artificial units. ANN layers in a model between the inputs (x) and final outputs (y) are often referred to as “hidden” layers. The layers of an ANN are often considered analogous to a population of neurons in regions of the brain which perform similar functions. For instance, primary visual cortex (V1) contain a population of neurons which receive visual inputs from the retina (relayed by LGN). As a population of neurons, V1 processes this visual input and this processed visual information is then relayed to area V2 for subsequent processing.
 
+```{r fig2-1, echo=FALSE, message=FALSE, fig.cap="Real neurons and artificial units"}
 
+knitr::include_graphics("img/figure_2.1v2.png")
+
+```
+
+## Model Archetypes {#sec:modarchetypes}
+
+Deep artificial neural network models typically have multiples of these layers stacked one after the other, such that the outputs of one layer become the inputs for the subsequent layer. Deep ANN models are often constructed for a specific purpose, or to perform a specific task. Models are often categorized based on purported task and the structure of the inputs it uses to accomplish this task. For instance, many computer vision researchers train models which, given an image, categorize the object in the image.
+
+### Classifiers {#sec:classifiers}
+
+Classifiers are a class of models that attempt to predict the best category that describes the input from a discrete number of categories. For example, a classic machine learning exercise has been to train a model to predict the category of an object depicted in an image. MNIST, Fashion-MNIST [@Xiao:2017wj], CIFAR10/100 [@Krizhevsky:2009tr] and ImageNet are examples of large labeled image datasets that have been historically popular for evaluating a model’s classification performance. Classifiers are not specific image tasks and can be used on any discrete labeling task. For instance, in Chapter 3 we trained an ANN classifier to predict behavioral sleep state in human PD patients based on features from local field potential spectral decompositions.
+
+### Regressors {#sec:regressors}
+
+Regressors use their inputs and attempt to predict a continuous value purportedly derived from the input. Recently, neural network models have been used as functional models of the visual system. These models use images to predict neuronal firing rates observed in animals after viewing the same image and has been used to successfully for predicting stimulus evoked activity in retina  [@NIPS2016_6388] and Inferior Temporal cortex (IT) [@Yamins:2014gi]. We successfully utilized a convolutional neural network regressor model to predict firing responses for populations of neurons in macaque primary visual cortex (V1) which is the subject of Chapter 5.
+
+### Autoencoders {#sec:autoencoders}
+
+Autoencoders are a special class of models which attempt to predict their inputs. This is a trivial task if each the intermediate hidden layers have similar dimensionality as the input and output; the model can simply learn to copy the input into the output. Instead, these models are more often configured to have far few dimensions in their hidden layers. In this configuration the only way to successfully perform the task is to exploit information redundancy in the input to compress the input while retaining as much information as possible.
+
+## Layer Architectures {#sec:architectures}
+
+Training an ANN model using machine learning typically requires three components. These components are 1) the model’s layer architecture, 2) objective or loss function, and 3) the models learning rules. The layer architecture of a model explicitly specifies how the artificial units, organized in layers, are connected from input to output. There are a wide variety of layers to choose from when constructing a deep ANN but for the sake of brevity only descriptions of layer architectures used in this work will be provided.
+
+### All-to-all {#sec:all2all}
+
+All-to-all layers are the simplest and oldest of layer architectures. In all-to-all layers, every input is connected to every unit in the layer. We can describe this ANN layer mathematically by vectorizing the previous equation wherein inputs and output firing rates are represented as vectors $(x_i,a_j)$ instead of scalars $(x,a)$:

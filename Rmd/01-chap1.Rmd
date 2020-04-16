@@ -3,16 +3,40 @@ chapter: 1
 knit: "bookdown::render_book"
 ---
 
-# Introduction {#ch:intro}
+# INTRODUCTION {#ch:intro}
 
-Neurological and psychiatric disease represent a significant societal burden in both advanced and developing countries (Collins et al., 2011) and there is a significant need for more effective treatments.
+Neurological and psychiatric disease represent a significant societal burden in both advanced and developing countries [@Collins:2011ja] and there is a significant need for more effective treatments.
 Recent advances in brain stimulation and recording technology have enabled development of long-desired treatment options for many of these diseases in the form of implantable devices that directly stimulate populations of neurons.
 Deep brain stimulation (DBS) is one such implantable device wherein patients receive electrical pulses via electrodes that have been implanted in the brain to mitigate their disease symptoms.
-DBS has become an established therapy for movement disorders (Perlmutter and Mink, 2006) as well as epilepsy and psychiatric diseases (Holtzheimer and Mayberg, 2011).
+DBS has become an established therapy for movement disorders [@Perlmutter:2006kp] as well as epilepsy and psychiatric diseases [@Holtzheimer:2011eq].
 Another group of implantable neurostimulators are neural prosthetics, such as cortical prostheses, which aim to restore sight in patients with congenital or acquired blindness. The body of work presented here makes progress on two unsolved challenges limiting advances in implantable neurostimulators, namely DBS state detection and more accurate cortical encoding of visual stimuli.
 
 ## Deep Brain Stimulation {#sec:dbs}
 
 Deep brain stimulation (DBS) uses a surgically implanted stimulator to apply electrical pulses directly to the brain to mitigate symptoms of neurologic and psychiatric disease. Historically, drugs have been the primary method of treating these diseases, but DBS has emerged as a promising alternative for patients who don’t respond to pharmacotherapy. Parkinson’s disease (PD) was among the first FDA approved uses of DBS for mitigating the disease’s motor symptoms. When employed for treating PD, current best practice for DBS therapy uses constant stimulation even though its therapeutic benefits to motor symptoms are only needed when the patient is awake and trying to move (Fig 1). Current implanted stimulators are used this way because they have no way to detect when stimulation isn’t needed, such as when the patient is asleep or when lower levels of stimulation are needed to correct resting tremor. This strategy of constant stimulation, or open-loop stimulation, is less power efficient and comes with side effects such as impaired cognition, speech, gait, and balance (Hariz et al., 2008). However, activating DBS stimulation only when necessary requires a robust method for discerning when the patient’s brain needs stimulation or not. For example, a closed-loop DBS system would read out the patient’s brain state and only deliver electrical pulses during periods when the patient is awake. Closed-loop DBS is more power efficient and would have less collateral side effects by only stimulating when necessary.
+
+## Neural Interfaces {#sec:neuralinterfaces}
+
+Cortical prosthetics (Fig 2) are a form of neural interface used to restore sight in blind patients(Lorach et al., 2013). These implantable neurostimulators bypass lost or damaged neurons and stimulating their targets as the original neurons otherwise would. Cortical prostheses must reproduce the neural activity patterns that would typically be relayed by naturally by neurons of the LGN and retina when directly stimulating visual cortex. Neural encoding, our understanding of how neurons reformat and represent visual stimuli, is key to this goal of properly restoring sight.
+
+### Bottom-up neural encoding models
+
+The ultimate test of our knowledge of neural encoding is to predict neural responses to stimuli. For instance, we know the visual cortex receives complex spatiotemporal patterns of light relayed by the retina and reformats these patterns to infer what caused them (i.e. the identity of the object).
+
+A neuron’s receptive field (RF) depicts the properties of an image that modulate that neurons activity. RF’s are typically represented in model’s by linear filters applied at the first stage of processing.
+
+These filters multiplied by an image and summed predict a given neurons response to that image. The linear RF model was insufficient for predicting several non-linear properties of retinal ganglion cell (RGC) responses to white noise.
+
+Linear-Nonlinear-Poisson (LNP) (Paninski et al., 2004) models are commonly used to predict retinal ganglion cell (RGC) spike rates in responses to image stimuli.
+LNP combines a linear spatial filter with a single static non-linearity.
+The LNP model captured X variance for white noise stimuli but it doesn’t generalize to natural image stimuli.
+Generalized Linear Model's (GLM) (Pillow et al., 2008) improve prediction accuracy by accounting for interactions between RGC’s and substituting the spatial receptive field with a spatiotemporal receptive field.
+
+## Summary {#sec:ch1summary}
+
+Chapter 2 provides an introduction to machine learning that serves as a foundation for the technical chapters that follow.
+In Chapter 3 we discuss our work decoding sleep state using neural network models trained on direct intracranial recordings of human basal ganglia. Importantly, this model generalizes decoding to patients never seen by the model and may allow new ways to leverage implantable stimulators for therapeutic benefit.
+Chapter 4 explores the effects multi-functional objectives (recognize and visualize) on both learned representations and task performance. This work was motivated by the observation that visual processing areas are reactivated during visualization tasks indicating their dual role in visual processing and regenerating stimuli. 
+Finally, Chapter 5 demonstrates the utility of neural network models as way to explain response properties of individual neurons. We achieved state of the art performance at predicting activity of individual neurons evoked by natural image stimuli in macaque V1 using a convolutional neural network. Furthermore, we used this model generatively to explain response properties of cells outside of Hubel and Wiesel’s simple- or complex-cell designations.
 
 

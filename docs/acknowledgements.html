@@ -68,15 +68,31 @@
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
 <li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
-<li class="chapter" data-level="1" data-path="ch-intro.html"><a href="ch-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<li class="chapter" data-level="1" data-path="ch-intro.html"><a href="ch-intro.html"><i class="fa fa-check"></i><b>1</b> INTRODUCTION</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="ch-intro.html"><a href="ch-intro.html#sec:dbs"><i class="fa fa-check"></i><b>1.1</b> Deep Brain Stimulation</a></li>
-</ul></li>
-<li class="chapter" data-level="2" data-path="ch-litreview.html"><a href="ch-litreview.html"><i class="fa fa-check"></i><b>2</b> Literature Review</a>
+<li class="chapter" data-level="1.2" data-path="ch-intro.html"><a href="ch-intro.html#sec:neuralinterfaces"><i class="fa fa-check"></i><b>1.2</b> Neural Interfaces</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="ch-litreview.html"><a href="ch-litreview.html#sec:expsmooth"><i class="fa fa-check"></i><b>2.1</b> Exponential smoothing</a></li>
+<li class="chapter" data-level="1.2.1" data-path="ch-intro.html"><a href="ch-intro.html#bottom-up-neural-encoding-models"><i class="fa fa-check"></i><b>1.2.1</b> Bottom-up neural encoding models</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="additional-stuff.html"><a href="additional-stuff.html"><i class="fa fa-check"></i><b>3</b> Additional stuff</a></li>
+<li class="chapter" data-level="1.3" data-path="ch-intro.html"><a href="ch-intro.html#sec:ch1summary"><i class="fa fa-check"></i><b>1.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html"><i class="fa fa-check"></i><b>2</b> MACHINE LEARNING AND COMPUTATIONAL NEUROSCIENCE</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:artificialunits"><i class="fa fa-check"></i><b>2.1</b> Artificial Units</a></li>
+<li class="chapter" data-level="2.2" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:layers"><i class="fa fa-check"></i><b>2.2</b> Layers</a></li>
+<li class="chapter" data-level="2.3" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:modarchetypes"><i class="fa fa-check"></i><b>2.3</b> Model Archetypes</a>
+<ul>
+<li class="chapter" data-level="2.3.1" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:classifiers"><i class="fa fa-check"></i><b>2.3.1</b> Classifiers</a></li>
+<li class="chapter" data-level="2.3.2" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:regressors"><i class="fa fa-check"></i><b>2.3.2</b> Regressors</a></li>
+<li class="chapter" data-level="2.3.3" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:regressors"><i class="fa fa-check"></i><b>2.3.3</b> Autoencoders</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:architectures"><i class="fa fa-check"></i><b>2.4</b> Layer Architectures</a>
+<ul>
+<li class="chapter" data-level="2.4.1" data-path="ch-mlprimer.html"><a href="ch-mlprimer.html#sec:all2all"><i class="fa fa-check"></i><b>2.4.1</b> All-to-all</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>REFERENCES</a></li>
 </ul>
 
       </nav>
@@ -96,8 +112,8 @@
             <section class="normal" id="section-">
 <div id="acknowledgements" class="section level1 unnumbered" number="">
 <h1>Acknowledgements</h1>
-<p>I would like to thank my support by the Department of Defense (DoD) through the National Defense Science &amp; Engineering Graduate Fellowship (NDSEG) Program as well as by the Canada First Research Excellence Fund (CFREF) and York University.</p>
 <p>Special thanks to Alon Poleg-Polsky for thoughtful discussion and direction and to Gidon Felsen for providing a place to call home.</p>
+<p>I would like to thank my support by the Department of Defense (DoD) through the National Defense Science &amp; Engineering Graduate Fellowship (NDSEG) Program as well as by the Canada First Research Excellence Fund (CFREF) and York University.</p>
 
 </div>
             </section>
@@ -156,6 +172,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

@@ -4,6 +4,6 @@ knit: "bookdown::render_book"
 
 # Acknowledgements {-}
 
-I would like to thank my support by the Department of Defense (DoD) through the National Defense Science & Engineering Graduate Fellowship (NDSEG) Program as well as by the Canada First Research Excellence Fund (CFREF) and York University. 
-
 Special thanks to Alon Poleg-Polsky for thoughtful discussion and direction and to Gidon Felsen for providing a place to call home.
+
+I would like to thank my support by the Department of Defense (DoD) through the National Defense Science & Engineering Graduate Fellowship (NDSEG) Program as well as by the Canada First Research Excellence Fund (CFREF) and York University. 

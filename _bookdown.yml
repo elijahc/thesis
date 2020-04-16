@@ -6,4 +6,4 @@ rmd_subdir: ["Rmd/"]
 output_dir: docs
 delete_merged_file: TRUE
 # bookdown::epub_book: default
-# clean: [thesisrefs.bib.bbl, thesisrefs.bib.blg, thesis.run.xml]
+clean: [thesis.bib.bbl, thesis.bib.blg]
