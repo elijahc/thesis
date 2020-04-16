@@ -6,12 +6,14 @@ degrees: 'BS, University of Washington'
 site: bookdown::bookdown_site
 bibliography: [bib/jov.bib, bib/thesis.bib]
 link-citations: yes
-output:
-  bookdown::gitbook: default
+# output:
+#  bookdown::gitbook: default
 #     includes:
 #       after_body: hypothesis.html
-  bookdown::pdf_book: default
+#  bookdown::pdf_book: default
 ---
+
+`r if (knitr::is_latex_output()) '<!--'`
 
 # Welcome {-}
 
