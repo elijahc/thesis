@@ -20,7 +20,7 @@ $$
 
 Just as the brain is comprised of more than one neuron, most models make use of many artificial units. Similar to the laminar organization of the neocortex, artificial neural networks (ANN) group individual units together in layers (Fig \@ref(fig:fig2-1)C). The artificial units within a layer collectively operate on a shared input and the layers output consists the collective activations of its constituent artificial units. ANN layers in a model between the inputs (x) and final outputs (y) are often referred to as “hidden” layers. The layers of an ANN are often considered analogous to a population of neurons in regions of the brain which perform similar functions. For instance, primary visual cortex (V1) contain a population of neurons which receive visual inputs from the retina (relayed by LGN). As a population of neurons, V1 processes this visual input and this processed visual information is then relayed to area V2 for subsequent processing.
 
-```{r fig2-1, echo=FALSE, message=FALSE, fig.cap="Real neurons and artificial units"}
+```{r fig2-1, echo=FALSE, message=FALSE, out.width = '75%', fig.cap="Real neurons and artificial units"}
 
 knitr::include_graphics("img/figure_2.1v2.png")
 
@@ -49,3 +49,26 @@ Training an ANN model using machine learning typically requires three components
 ### All-to-all {#sec:all2all}
 
 All-to-all layers are the simplest and oldest of layer architectures. In all-to-all layers, every input is connected to every unit in the layer. We can describe this ANN layer mathematically by vectorizing the previous equation wherein inputs and output firing rates are represented as vectors $(x_i,a_j)$ instead of scalars $(x,a)$:
+
+## Loss Function {#sec:lossfunc}
+
+Loss or cost functions ( $J$ ) are mathematical definitions of the goal of the learning system. The loss function is used to calculate a scalar metric quantifying the models’ task performance as a function of its output. Loss functions can take any form mathematically as long as they are 1) differentiable and 2) convex. Reconstruction error (sum of squared pixel errors) were traditionally used for training models which attempt to generate a particular image. We can express the sum squared pixel loss between an image $\hat{y}$ and the target reference $y$ as:
+
+$$
+J(y,\hat{y}) = \sum (y-\hat{y})^2
+$$
+
+Objective functions don’t have to depend on a particular dataset or task. For instance, sparse coding models use activation sparseness and reconstruction error as their objective function to learn sparse representations. When minimized over images of natural scenes they learn a set of basis functions that resemble localized receptive fields of simple cells in primary visual cortex [@Olshausen:1996kc]
+
+## Learning Rules {#sec:learningrules}
+
+Once a model’s architecture and objective function are specified “training” it is simply optimizing the parameters of each layer to improve its loss. The algorithm for how to iteratively update the ANN model parameters to minimize loss was first demonstrated by Rumelhart [@Rumelhart:1986er] and it is a simple 2 step process:
+
+1) Forward pass: Use a batch of $x$ input values to calculate the predicted outputs $\hat{y}$
+1) Backpropogation: Use prediction error to update weights and biases
+
+To illustrate this process, we will derive it for a simple 2-layer ANN. For simplicity, we change notation when describing deep ANN with multiple layers such that variable and function subscripts denote the variable or function’s corresponding layer NOT matrix or vector dimensions. For instance, we define the output activations of the lth layer in a model comprised of sequentially stacked all-to-all layers as:
+
+$$
+a_l = g(a_{l-1} \cdot W_l + b_l)
+$$
