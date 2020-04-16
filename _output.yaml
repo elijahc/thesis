@@ -14,7 +14,7 @@ bookdown::gitbook:
       after: |
         <li><strong><a href="https://github.com/rstudio/bookdown" target="blank">Proudly published with bookdown</a></strong></li>
     edit: https://github.com/elijahc/thesis/edit/master/%s
-    download: ["pdf",'epub']
+    download: ["epub"]
     sharing: no
 
 bookdown::epub_book: default
