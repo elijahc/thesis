@@ -1,6 +1,9 @@
 pdfbook:
 	Rscript --quiet _render.R "bookdown::pdf_book"
 
+epubbook:
+	Rscript --quiet _render.R "bookdown::epub_book"
+
 gitbook:
 	Rscript --quiet _render.R "bookdown::gitbook"
 

@@ -1,7 +1,8 @@
 bookdown::gitbook:
   css: templates/style.css
+  includes:
+    after_body: hypothesis.html
   dev: "png"
-  # split_by: section+number
   split_bib: no
   fig_retina: 1
   toc_depth: 2
@@ -13,8 +14,10 @@ bookdown::gitbook:
       after: |
         <li><strong><a href="https://github.com/rstudio/bookdown" target="blank">Proudly published with bookdown</a></strong></li>
     edit: https://github.com/elijahc/thesis/edit/master/%s
-    download: no
+    download: ["pdf",'epub']
     sharing: no
+
+bookdown::epub_book: default
 
 bookdown::pdf_book:
   template: templates/ucdenverthesis.tex
