@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.4 Layer Architectures | Computational Models of Neural Encoding in Vision and Neurostimulation</title>
+  <meta name="description" content="2.4 Layer Architectures | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.4 Layer Architectures | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.4 Layer Architectures | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  
+  
+  
+
+<meta name="author" content="Elijah Christensen" />
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="2-3-sec-modarchetypes.html"/>
+<link rel="next" href="2-5-sec-lossfunc.html"/>
+<script src="libs/header-attrs-2.1/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="stylesheet" href="templates/style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><strong><a href="./">Neural Encoding Models</a></strong></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
+<li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="1-ch-intro.html"><a href="1-ch-intro.html"><i class="fa fa-check"></i><b>1</b> INTRODUCTION</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="1-1-sec-dbs.html"><a href="1-1-sec-dbs.html"><i class="fa fa-check"></i><b>1.1</b> Deep Brain Stimulation</a></li>
+<li class="chapter" data-level="1.2" data-path="1-2-sec-neuralinterfaces.html"><a href="1-2-sec-neuralinterfaces.html"><i class="fa fa-check"></i><b>1.2</b> Neural Interfaces</a></li>
+<li class="chapter" data-level="1.3" data-path="1-3-sec-ch1summary.html"><a href="1-3-sec-ch1summary.html"><i class="fa fa-check"></i><b>1.3</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="2-ch-mlprimer.html"><a href="2-ch-mlprimer.html"><i class="fa fa-check"></i><b>2</b> MACHINE LEARNING AND COMPUTATIONAL NEUROSCIENCE</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="2-1-sec-artificialunits.html"><a href="2-1-sec-artificialunits.html"><i class="fa fa-check"></i><b>2.1</b> Artificial Units</a></li>
+<li class="chapter" data-level="2.2" data-path="2-2-sec-layers.html"><a href="2-2-sec-layers.html"><i class="fa fa-check"></i><b>2.2</b> Layers</a></li>
+<li class="chapter" data-level="2.3" data-path="2-3-sec-modarchetypes.html"><a href="2-3-sec-modarchetypes.html"><i class="fa fa-check"></i><b>2.3</b> Model Archetypes</a></li>
+<li class="chapter" data-level="2.4" data-path="2-4-sec-architectures.html"><a href="2-4-sec-architectures.html"><i class="fa fa-check"></i><b>2.4</b> Layer Architectures</a></li>
+<li class="chapter" data-level="2.5" data-path="2-5-sec-lossfunc.html"><a href="2-5-sec-lossfunc.html"><i class="fa fa-check"></i><b>2.5</b> Loss Function</a></li>
+<li class="chapter" data-level="2.6" data-path="2-6-sec-learningrules.html"><a href="2-6-sec-learningrules.html"><i class="fa fa-check"></i><b>2.6</b> Learning Rules</a></li>
+<li class="chapter" data-level="2.7" data-path="2-7-sec-optimizers.html"><a href="2-7-sec-optimizers.html"><i class="fa fa-check"></i><b>2.7</b> Optimizers</a></li>
+<li class="chapter" data-level="2.8" data-path="2-8-sec-ch2summary.html"><a href="2-8-sec-ch2summary.html"><i class="fa fa-check"></i><b>2.8</b> Summary</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="3-ch3-jsr.html"><a href="3-ch3-jsr.html"><i class="fa fa-check"></i><b>3</b> PREDICTING SLEEP STATE IN HUMAN PD PATIENTS</a>
+<ul>
+<li class="chapter" data-level="" data-path="abstract.html"><a href="abstract.html"><i class="fa fa-check"></i>Abstract</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="4-ch4-intro.html"><a href="4-ch4-intro.html"><i class="fa fa-check"></i><b>4</b> MODELS OF THE VENTRAL STREAM THAT CATEGORIZE AND VISUALIZE IMAGES</a>
+<ul>
+<li class="chapter" data-level="" data-path="abstract-1.html"><a href="abstract-1.html"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="4.1" data-path="4-1-materials-and-methods.html"><a href="4-1-materials-and-methods.html"><i class="fa fa-check"></i><b>4.1</b> Materials and Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="5-ch5-jov.html"><a href="5-ch5-jov.html"><i class="fa fa-check"></i><b>5</b> PREDICTING SINGLE NEURUON RESPONSES IN MACAQUE V1</a>
+<ul>
+<li class="chapter" data-level="" data-path="abstract-2.html"><a href="abstract-2.html"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="5.1" data-path="5-1-introduction.html"><a href="5-1-introduction.html"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="5-2-methods.html"><a href="5-2-methods.html"><i class="fa fa-check"></i><b>5.2</b> Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>REFERENCES</a></li>
+<li class="divider"></li>
+<li><strong><a href="https://github.com/rstudio/bookdown" target="blank">Proudly published with bookdown</a></strong></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Computational Models of Neural Encoding in Vision and Neurostimulation</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="sec:architectures" class="section level2" number="2.4">
+<h2><span class="header-section-number">2.4</span> Layer Architectures</h2>
+<p>Training an ANN model using machine learning typically requires three components. These components are 1) the model’s layer architecture, 2) objective or loss function, and 3) the models learning rules. The layer architecture of a model explicitly specifies how the artificial units, organized in layers, are connected from input to output. There are a wide variety of layers to choose from when constructing a deep ANN but for the sake of brevity only descriptions of layer architectures used in this work will be provided.</p>
+<div id="sec:all2all" class="section level3" number="2.4.1">
+<h3><span class="header-section-number">2.4.1</span> All-to-all</h3>
+<p>All-to-all layers are the simplest and oldest of layer architectures. In all-to-all layers, every input is connected to every unit in the layer. We can describe this ANN layer mathematically by vectorizing the previous equation wherein inputs and output firing rates are represented as vectors <span class="math inline">\((x_i,a_j)\)</span> instead of scalars <span class="math inline">\((x,a)\)</span>:</p>
+</div>
+</div>
+<script type="application/json" class="js-hypothesis-config">
+
+{"showHighlights": false}
+
+</script>
+
+<script src="https://hypothes.is/embed.js" async></script>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="2-3-sec-modarchetypes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="2-5-sec-lossfunc.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/elijahc/thesis/edit/master/Rmd//02-chap2.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "none"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

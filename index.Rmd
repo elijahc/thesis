@@ -8,7 +8,9 @@ bibliography: [bib/jov.bib, bib/thesis.bib]
 link-citations: yes
 output:
   bookdown::gitbook: default
-  #bookdown::pdf_book: default
+#     includes:
+#       after_body: hypothesis.html
+  bookdown::pdf_book: default
 ---
 
 # Welcome {-}

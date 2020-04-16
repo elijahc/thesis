@@ -1,6 +1,8 @@
 bookdown::gitbook:
-  css: template/style.css
+  css: templates/style.css
   dev: "png"
+  includes:
+    after_body: hypothesis.html
   split_by: section+number
   split_bib: no
   fig_retina: 1
@@ -15,6 +17,7 @@ bookdown::gitbook:
     edit: https://github.com/elijahc/thesis/edit/master/%s
     download: no
     sharing: no
+
 bookdown::pdf_book:
   template: templates/ucdenverthesis.tex
   dev: "pdf"
