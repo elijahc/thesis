@@ -6,6 +6,7 @@ knit: "bookdown::render_book"
 # MODELS OF THE VENTRAL STREAM THAT CATEGORIZE AND VISUALIZE IMAGES {#ch4:intro}
 
 ## Abstract {-}
+
 The ventral stream (VS) of visual cortex begins in primary visual cortex (V1), ends in inferior temporal cortex (IT), and is essential for object recognition.
 Accordingly, the long-standing belief in the field is that the ventral stream could be understood as mapping visual scenes onto neuronal firing patterns that represent object identity(Felleman and Van Essen, 1991).
 Supporting that assertion, deep convolutional neural networks (DCNN’s) trained to categorize objects in natural images develop intermediate representations that resemble those in primate VS(Cadieu et al., 2014; Güçlü and van Gerven, 2015; Yamins et al., 2014; Yamins and DiCarlo, 2016).

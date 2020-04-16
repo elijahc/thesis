@@ -102,10 +102,11 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="ch3-jsr.html"><a href="ch3-jsr.html"><i class="fa fa-check"></i><b>3</b> PREDICTING SLEEP STATE IN HUMAN PD PATIENTS</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="ch3-jsr.html"><a href="ch3-jsr.html#abstract"><i class="fa fa-check"></i><b>3.1</b> Abstract</a></li>
+<li class="chapter" data-level="" data-path="ch3-jsr.html"><a href="ch3-jsr.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="ch4-intro.html"><a href="ch4-intro.html"><i class="fa fa-check"></i><b>4</b> MODELS OF THE VENTRAL STREAM THAT CATEGORIZE AND VISUALIZE IMAGES</a>
 <ul>
+<li class="chapter" data-level="" data-path="ch4-intro.html"><a href="ch4-intro.html#abstract-1"><i class="fa fa-check"></i>Abstract</a></li>
 <li class="chapter" data-level="4.1" data-path="ch4-intro.html"><a href="ch4-intro.html#materials-and-methods"><i class="fa fa-check"></i><b>4.1</b> Materials and Methods</a>
 <ul>
 <li class="chapter" data-level="4.1.1" data-path="ch4-intro.html"><a href="ch4-intro.html#dataset-and-augmentation"><i class="fa fa-check"></i><b>4.1.1</b> Dataset and augmentation</a></li>
@@ -113,10 +114,11 @@
 </ul></li>
 <li class="chapter" data-level="5" data-path="ch5-jov.html"><a href="ch5-jov.html"><i class="fa fa-check"></i><b>5</b> PREDICTING SINGLE NEURUON RESPONSES IN MACAQUE V1</a>
 <ul>
-<li class="chapter" data-level="" data-path="ch5-jov.html"><a href="ch5-jov.html#abstract-1"><i class="fa fa-check"></i>Abstract</a></li>
-<li class="chapter" data-level="5.1" data-path="ch5-jov.html"><a href="ch5-jov.html#methods"><i class="fa fa-check"></i><b>5.1</b> Methods</a>
+<li class="chapter" data-level="" data-path="ch5-jov.html"><a href="ch5-jov.html#abstract-2"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="5.1" data-path="ch5-jov.html"><a href="ch5-jov.html#introduction"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="ch5-jov.html"><a href="ch5-jov.html#methods"><i class="fa fa-check"></i><b>5.2</b> Methods</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="ch5-jov.html"><a href="ch5-jov.html#experimental-data"><i class="fa fa-check"></i><b>5.1.1</b> Experimental Data</a></li>
+<li class="chapter" data-level="5.2.1" data-path="ch5-jov.html"><a href="ch5-jov.html#experimental-data"><i class="fa fa-check"></i><b>5.2.1</b> Experimental Data</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>REFERENCES</a></li>
@@ -139,18 +141,24 @@
             <section class="normal" id="section-">
 <div id="ch5:jov" class="section level1" number="5">
 <h1><span class="header-section-number">Chapter 5</span> PREDICTING SINGLE NEURUON RESPONSES IN MACAQUE V1</h1>
+<blockquote>
+<p>The contents of this chapter are available in <a href="https://doi.org/10.1167/19.4.29">Using deep learning to probe the neural code for images in primary visual cortex</a><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+</blockquote>
 <ul>
-<li><p>The contents of this chapter are available from the directly from the <a href="https://doi.org/10.1167/19.4.29">publisher</a><a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p></li>
-<li><p>[<a href="https://github.com/jzlab/v1_predictor">Source Code</a>]</p></li>
+<li>[<a href="https://github.com/jzlab/v1_predictor">Source Code</a>]</li>
 </ul>
-<div id="abstract-1" class="section level2 unnumbered" number="">
+<div id="abstract-2" class="section level2 unnumbered" number="">
 <h2>Abstract</h2>
 <p>Primary visual cortex (V1) is the first stage of cortical image processing, and major effort in systems neuroscience is devoted to understanding how it encodes information about visual stimuli. Within V1, many neurons respond selectively to edges of a given preferred orientation: These are known as either simple or complex cells. Other neurons respond to localized center–surround image features. Still others respond selectively to certain image stimuli, but the specific features that excite them are unknown. Moreover, even for the simple and complex cells—the best-understood V1 neurons—it is challenging to predict how they will respond to natural image stimuli. Thus, there are important gaps in our understanding of how V1 encodes images. To fill this gap, we trained deep convolutional neural networks to predict the firing rates of V1 neurons in response to natural image stimuli, and we find that the predicted firing rates are highly correlated (<span class="math inline">\(CC_{norm}\)</span> = 0.556 ± 0.01) with the neurons’ actual firing rates over a population of 355 neurons. This performance value is quoted for all neurons, with no selection filter. Performance is better for more active neurons: When evaluated only on neurons with mean firing rates above 5 Hz, our predictors achieve correlations of <span class="math inline">\(CC_{norm}\)</span> = 0.69 ± 0.01 with the neurons’ true firing rates. We find that the firing rates of both orientation-selective and non-orientation-selective neurons can be predicted with high accuracy. Additionally, we use a variety of models to benchmark performance and find that our convolutional neural-network model makes more accurate predictions.</p>
 </div>
-<div id="methods" class="section level2" number="5.1">
-<h2><span class="header-section-number">5.1</span> Methods</h2>
-<div id="experimental-data" class="section level3" number="5.1.1">
-<h3><span class="header-section-number">5.1.1</span> Experimental Data</h3>
+<div id="introduction" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Introduction</h2>
+<p>Our ability to see arises because of the activity evoked in our brains as we view the world around us. Ever since Hubel and Wiesel (1959) mapped the flow of visual information from the retina to thalamus and then cortex, understanding how these different regions encode and process visual information has been a major focus of visual systems neuroscience. In the first cortical layer of visual processing—primary visual cortex (V1)—Hubel and Wiesel identified neurons that respond to oriented edges within image stimuli. These are called simple or complex cells, depending on how sensitive their responses are to shifts in the position of the edge. The simple and complex cells are well studied (Lehky, Sejnowski, &amp; Desimone, 1992; David, Vinje, &amp; Gallant, 2004; Montijn, Meijer, Lansink, &amp; Pennartz, 2016). However, many V1 neurons are neither simple nor complex cells, and the classical models of simple and complex cells often fail to predict how those neurons will respond to naturalistic stimuli (Olshausen &amp; Field, 2005). Thus, much of how V1 encodes visual information remains unknown. We use deep learning to address this longstanding problem.</p>
+</div>
+<div id="methods" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Methods</h2>
+<div id="experimental-data" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Experimental Data</h3>
 <p>Neural activity was recorded in monkeys’ V1 as they were shown a series of images (Fig <a href="ch5-jov.html#fig:5-1">5.1</a>A). The image set contains 270 circularly cropped natural images (Fig <a href="ch5-jov.html#fig:5-1">5.1</a>B). (C) The response of a single neuron over repeated presentations of an image. Ticks indicate the neuron’s spiking; each row corresponds to a different image-presentation trial. During the response window, the firing rate is computed and then averaged over trials to yield the average response <span class="math inline">\(A_{n,i}\)</span> used in our analysis. (D) The neuron responds to image stimuli with a latency of ∼50 ms from the image onset at t = 0, as seen in the peristimulus time histogram (firing rate plotted against time, averaged over all 270 images).</p>
 <div class="figure" style="text-align: center"><span id="fig:5-1"></span>
 <img src="img/figure_5.1.png" alt="Experimental data collection and processing." width="75%" />

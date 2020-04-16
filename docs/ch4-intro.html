@@ -102,10 +102,11 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="ch3-jsr.html"><a href="ch3-jsr.html"><i class="fa fa-check"></i><b>3</b> PREDICTING SLEEP STATE IN HUMAN PD PATIENTS</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="ch3-jsr.html"><a href="ch3-jsr.html#abstract"><i class="fa fa-check"></i><b>3.1</b> Abstract</a></li>
+<li class="chapter" data-level="" data-path="ch3-jsr.html"><a href="ch3-jsr.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="ch4-intro.html"><a href="ch4-intro.html"><i class="fa fa-check"></i><b>4</b> MODELS OF THE VENTRAL STREAM THAT CATEGORIZE AND VISUALIZE IMAGES</a>
 <ul>
+<li class="chapter" data-level="" data-path="ch4-intro.html"><a href="ch4-intro.html#abstract-1"><i class="fa fa-check"></i>Abstract</a></li>
 <li class="chapter" data-level="4.1" data-path="ch4-intro.html"><a href="ch4-intro.html#materials-and-methods"><i class="fa fa-check"></i><b>4.1</b> Materials and Methods</a>
 <ul>
 <li class="chapter" data-level="4.1.1" data-path="ch4-intro.html"><a href="ch4-intro.html#dataset-and-augmentation"><i class="fa fa-check"></i><b>4.1.1</b> Dataset and augmentation</a></li>
@@ -113,10 +114,11 @@
 </ul></li>
 <li class="chapter" data-level="5" data-path="ch5-jov.html"><a href="ch5-jov.html"><i class="fa fa-check"></i><b>5</b> PREDICTING SINGLE NEURUON RESPONSES IN MACAQUE V1</a>
 <ul>
-<li class="chapter" data-level="" data-path="ch5-jov.html"><a href="ch5-jov.html#abstract-1"><i class="fa fa-check"></i>Abstract</a></li>
-<li class="chapter" data-level="5.1" data-path="ch5-jov.html"><a href="ch5-jov.html#methods"><i class="fa fa-check"></i><b>5.1</b> Methods</a>
+<li class="chapter" data-level="" data-path="ch5-jov.html"><a href="ch5-jov.html#abstract-2"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="5.1" data-path="ch5-jov.html"><a href="ch5-jov.html#introduction"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="ch5-jov.html"><a href="ch5-jov.html#methods"><i class="fa fa-check"></i><b>5.2</b> Methods</a>
 <ul>
-<li class="chapter" data-level="5.1.1" data-path="ch5-jov.html"><a href="ch5-jov.html#experimental-data"><i class="fa fa-check"></i><b>5.1.1</b> Experimental Data</a></li>
+<li class="chapter" data-level="5.2.1" data-path="ch5-jov.html"><a href="ch5-jov.html#experimental-data"><i class="fa fa-check"></i><b>5.2.1</b> Experimental Data</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>REFERENCES</a></li>
@@ -139,6 +141,8 @@
             <section class="normal" id="section-">
 <div id="ch4:intro" class="section level1" number="4">
 <h1><span class="header-section-number">Chapter 4</span> MODELS OF THE VENTRAL STREAM THAT CATEGORIZE AND VISUALIZE IMAGES</h1>
+<div id="abstract-1" class="section level2 unnumbered" number="">
+<h2>Abstract</h2>
 <p>The ventral stream (VS) of visual cortex begins in primary visual cortex (V1), ends in inferior temporal cortex (IT), and is essential for object recognition.
 Accordingly, the long-standing belief in the field is that the ventral stream could be understood as mapping visual scenes onto neuronal firing patterns that represent object identity(Felleman and Van Essen, 1991).
 Supporting that assertion, deep convolutional neural networks (DCNN’s) trained to categorize objects in natural images develop intermediate representations that resemble those in primate VS(Cadieu et al., 2014; Güçlü and van Gerven, 2015; Yamins et al., 2014; Yamins and DiCarlo, 2016).
@@ -146,6 +150,7 @@ However, several recent findings appear at odds with the object recognition hypo
 VS and other visual areas are also engaged during visualization of both prior experience and novel scenes (O’Craven and Kanwisher, 2006; Stokes et al., 2009), suggesting that the VS can generate visual scenes, in addition to processing them as inputs. Furthermore, non-categorical information, about object positions, sizes, etc. is also represented with increasing explicitness in late VS areas V4 and IT(Hong et al., 2016).
 This is not necessarily expected in a “pure” object recognition system, as the non-categorical information is not necessary for the categorization task. Thus, these recent findings challenge the long-held object recognition hypothesis of ventral stream and raise the question: What computational objective best explains VS physiology? <span class="citation">(<span class="citeproc-not-found" data-reference-id="Richards"><strong>???</strong></span>)</span></p>
 <p>To address that question, we pursued a recently-popularized approach and trained deep neural networks to perform different tasks: we then compared the trained neural networks’ responses to image stimuli to those observed in neurophysiology experiments3-5,8, to see which tasks yielded models that best matched the neural data. We trained our networks to perform one of two visual tasks: a) recognize objects; or b) recognize objects while also retaining enough information about the input image to allow its reconstruction. We studied the evolution of categorical and non-categorical information representations along the visual pathway within these models, and compared that evolution with data from monkey VS. Our main finding is that neural networks optimized for task (b) provide a better match to the representation of non-categorical information in the monkey physiology data than do those optimized for task (a). This suggests that a full understanding of visual ventral stream computations might require considerations other than object recognition.</p>
+</div>
 <div id="materials-and-methods" class="section level2" number="4.1">
 <h2><span class="header-section-number">4.1</span> Materials and Methods</h2>
 <div id="dataset-and-augmentation" class="section level3" number="4.1.1">
