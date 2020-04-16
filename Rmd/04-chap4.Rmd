@@ -3,7 +3,7 @@ chapter: 4
 knit: "bookdown::render_book"
 ---
 
-# MODELS OF THE VENTRAL STREAM THAT CATEGORIZE AND VISUALIZE IMAGES {#ch4:intro}
+# MODELS OF THE VENTRAL STREAM THAT CATEGORIZE AND VISUALIZE IMAGES {#ch:vae}
 
 ## Abstract {-}
 

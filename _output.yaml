@@ -10,7 +10,7 @@ bookdown::gitbook:
     toc:
       # collapse: none
       before: |
-        <li><strong><a href="./">Neural Encoding Models</a></strong></li>
+        <li><strong><a href="./">elijahc / thesis</a></strong></li>
       after: |
         <li><strong><a href="https://github.com/rstudio/bookdown" target="blank">Proudly published with bookdown</a></strong></li>
     edit: https://github.com/elijahc/thesis/edit/master/%s

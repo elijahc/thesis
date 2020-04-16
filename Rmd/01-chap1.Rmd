@@ -3,7 +3,7 @@ chapter: 1
 knit: "bookdown::render_book"
 ---
 
-# INTRODUCTION {#ch:intro}
+# Introduction {#ch:intro}
 
 Neurological and psychiatric disease represent a significant societal burden in both advanced and developing countries [@Collins:2011ja] and there is a significant need for more effective treatments.
 Recent advances in brain stimulation and recording technology have enabled development of long-desired treatment options for many of these diseases in the form of implantable devices that directly stimulate populations of neurons.
@@ -35,11 +35,12 @@ Generalized Linear Model's (GLM) (Pillow et al., 2008) improve prediction accura
 ## Summary {#sec:ch1summary}
 
 Chapter [2](#ch:mlprimer) provides an introduction to machine learning that serves as a foundation for the technical chapters that follow.
-In Chapter 3 we discuss work decoding sleep state using neural network models trained on direct intracranial recordings of human basal ganglia.
+
+In Chapter [3](#ch:jsr) we discuss work decoding sleep state using neural network models trained on direct intracranial recordings of human basal ganglia.
 Importantly, this model generalizes decoding to patients never seen by the model and may allow new ways to leverage implantable stimulators for therapeutic benefit.
 
-Chapter 4 explores the effects multi-functional objectives (recognize and visualize) on both learned representations and task performance. This work was motivated by the observation that visual processing areas are reactivated during visualization tasks indicating their dual role in visual processing and regenerating stimuli. 
+Chapter [4](#ch:vae) explores the effects multi-functional objectives (recognize and visualize) on both learned representations and task performance. This work was motivated by the observation that visual processing areas are reactivated during visualization tasks indicating their dual role in visual processing and regenerating stimuli. 
 
-Finally, Chapter 5 demonstrates the utility of neural network models as way to explain response properties of individual neurons. We achieved state of the art performance at predicting activity of individual neurons evoked by natural image stimuli in macaque V1 using a convolutional neural network. Furthermore, we used this model generatively to explain response properties of cells outside of Hubel and Wiesel’s simple- or complex-cell designations.
+Finally, Chapter [5](#ch:jov) demonstrates the utility of neural network models as way to explain response properties of individual neurons. We achieved state of the art performance at predicting activity of individual neurons evoked by natural image stimuli in macaque V1 using a convolutional neural network. Furthermore, we used this model generatively to explain response properties of cells outside of Hubel and Wiesel’s simple- or complex-cell designations.
 
 
