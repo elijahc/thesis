@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>CH 4 Models of the ventral stream that visualize and categorize images | Computational Models of Neural Encoding in Vision and Neurostimulation</title>
-  <meta name="description" content="CH 4 Models of the ventral stream that visualize and categorize images | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <title>CH 6 (DRAFT) Single Units to Brain-wide States | Computational Models of Neural Encoding in Vision and Neurostimulation</title>
+  <meta name="description" content="CH 6 (DRAFT) Single Units to Brain-wide States | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="CH 4 Models of the ventral stream that visualize and categorize images | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta property="og:title" content="CH 6 (DRAFT) Single Units to Brain-wide States | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="CH 4 Models of the ventral stream that visualize and categorize images | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta name="twitter:title" content="CH 6 (DRAFT) Single Units to Brain-wide States | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="ch3-jsr.html"/>
-<link rel="next" href="ch5-jov.html"/>
+<link rel="prev" href="ch5-jov.html"/>
+<link rel="next" href="references.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -134,25 +134,34 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="ch:vae" class="section level1" number="4">
-<h1><span class="header-section-number">CH 4</span> Models of the ventral stream that visualize and categorize images</h1>
-<div id="abstract-1" class="section level2 unnumbered" number="">
+<div id="ch5:discussion" class="section level1" number="6">
+<h1><span class="header-section-number">CH 6</span> (DRAFT) Single Units to Brain-wide States</h1>
+<div id="abstract-3" class="section level2 unnumbered" number="">
 <h2>Abstract</h2>
-<p>The ventral stream (VS) of visual cortex begins in primary visual cortex (V1), ends in inferior temporal cortex (IT), and is essential for object recognition.
-Accordingly, the long-standing belief in the field is that the ventral stream could be understood as mapping visual scenes onto neuronal firing patterns that represent object identity(Felleman and Van Essen, 1991).
-Supporting that assertion, deep convolutional neural networks (DCNN’s) trained to categorize objects in natural images develop intermediate representations that resemble those in primate VS(Cadieu et al., 2014; Güçlü and van Gerven, 2015; Yamins et al., 2014; Yamins and DiCarlo, 2016).
-However, several recent findings appear at odds with the object recognition hypothesis.
-VS and other visual areas are also engaged during visualization of both prior experience and novel scenes (O’Craven and Kanwisher, 2006; Stokes et al., 2009), suggesting that the VS can generate visual scenes, in addition to processing them as inputs. Furthermore, non-categorical information, about object positions, sizes, etc. is also represented with increasing explicitness in late VS areas V4 and IT(Hong et al., 2016).
-This is not necessarily expected in a “pure” object recognition system, as the non-categorical information is not necessary for the categorization task. Thus, these recent findings challenge the long-held object recognition hypothesis of ventral stream and raise the question: What computational objective best explains VS physiology? <span class="citation">(Richards et al. <a href="references.html#ref-Richards:2019bm" role="doc-biblioref">2019</a>)</span></p>
-<p>To address that question, we pursued a recently-popularized approach and trained deep neural networks to perform different tasks: we then compared the trained neural networks’ responses to image stimuli to those observed in neurophysiology experiments3-5,8, to see which tasks yielded models that best matched the neural data. We trained our networks to perform one of two visual tasks: a) recognize objects; or b) recognize objects while also retaining enough information about the input image to allow its reconstruction. We studied the evolution of categorical and non-categorical information representations along the visual pathway within these models, and compared that evolution with data from monkey VS. Our main finding is that neural networks optimized for task (b) provide a better match to the representation of non-categorical information in the monkey physiology data than do those optimized for task (a). This suggests that a full understanding of visual ventral stream computations might require considerations other than object recognition.</p>
+<p>A persisting challenge in neuroscience is to bridge the gap between the complex tasks we know brains can perform and the physical components (neurons) that enable them. In vision, this divide is particularly wide, and much effort has been devoted to understanding how our brain processes visual information. For instance, we know the visual cortex receives complex spatiotemporal patterns of light relayed by the retina and reformats these patterns to infer what caused them (i.e. the identity of the object present) <span class="citation">(DiCarlo, Zoccolan, and Rust <a href="references.html#ref-DiCarlo:2012em" role="doc-biblioref">2012</a>)</span>. Answering this question requires first understanding how visual information is encoded at each sequential stage of processing along brain areas in visual cortex. Computational modeling has much to offer neuroscience in addressing this knowledge gap. One approach is to build computational models to replicate the neural encoding which takes place when the brain receives sensory stimuli.</p>
 </div>
-<div id="materials-and-methods" class="section level2" number="4.1">
-<h2><span class="header-section-number">4.1</span> Materials and Methods</h2>
-<div id="dataset-and-augmentation" class="section level3" number="4.1.1">
-<h3><span class="header-section-number">4.1.1</span> Dataset and augmentation</h3>
-<p>We constructed images of clothing items superimposed at random locations over natural image backgrounds. To achieve this goal, we used all 70,000 images from the Fashion MNIST dataset, a computer vision object recognition dataset comprised of images of clothing articles from 10 different categories. We augmented this dataset by expanding the background of the image two-fold (from 28x28 pixels to 56x56 pixels) and drawing dx and dy linear pixel displacements from a uniform distribution spanning 75% of the image field {-11,11}. Images were then shifted according the randomly drawn dx and dy values. After applying positional shifts, the objects were superimposed over random patches extracted from natural images from the BSDS500 natural image dataset to produce simplified natural scenes which contain categorical (1 of 10 clothing categories) and non-categorical (position shifts) variation. Random 56x56 pixel patches from the BSDS500 dataset were gray scaled before the shifted object images were added to the background patch (Fig 1A). All augmentation was performed on-line during training. That is, every position shift and natural image patch was drawn randomly every training batch instead of pre-computing shifts and backgrounds. This allows every training batch to be composed of unique examples from the dataset and prevents overfitting.</p>
+<div id="modeling-neural-encoding-with-anns" class="section level2" number="6.1">
+<h2><span class="header-section-number">6.1</span> Modeling Neural Encoding with ANN’s</h2>
+<div id="predicting-single-units" class="section level3" number="6.1.1">
+<h3><span class="header-section-number">6.1.1</span> Predicting Single Units</h3>
+<p>At the most granular level, information is encoded in the spiking activities of individual neurons. Traditional systems neuroscience approaches have advanced our understanding neural encoding by providing explanations for what individual neurons compute. In visual systems neuroscience, Hubel and Wiesel performed the seminal work in the field showing that individual simple and complex cells in primary visual cortex (V1) “tuned” to respond to oriented edges. This approach has worked well for cells that respond well to simple stimuli, but the encoding properties of many other cells in V1 are still unexplained <span class="citation">(Olshausen and Field <a href="references.html#ref-Olshausen:2006fd" role="doc-biblioref">2006</a>)</span>.
+We demonstrate ANN’s trained with machine learning techniques are a robust model of neural encoding in V1 capable of accurately predicting single neuron responses to natural stimuli. Importantly, this model achieves equally good predictability for both orientation selective and non-orientation selective cells for natural image stimuli. We show this approach is a useful tool for studying responses properties of previously difficult to study cells in V1.</p>
+</div>
+<div id="objectively-useful" class="section level3" number="6.1.2">
+<h3><span class="header-section-number">6.1.2</span> Objectively Useful</h3>
+<p>David Marr proposed the idea that understanding the computational goals of visual processing is equally important and complementary to an understanding of the parts (e.g. individual neurons) that physically implement it. For early visual areas, efficient coding as a computational goal has been successful at explaining response properties of cells in primary visual cortex (V1) but has not worked as well at explaining responses in higher visual areas. The prevailing view for higher visual areas like inferior temporal cortex (IT) is that object recognition best describes its objective but directly testing this hypothesis is difficult.</p>
+<p>Questions of this nature are fundamentally challenging to test, especially when limited to only analyzing responses for a handful of neurons. Recent results have demonstrated ANN’s may be better suited for evaluating higher visual area objectives. Deep convolutional neural networks (DCNN’s) trained to categorize objects in images also develop internal representations which also match IT responses to natural images. It has been posited that matching representations could only arise if both the model and ventral stream are optimized for the same objective. We tested this explanation by optimizing models for both image categorization and a composite categorize and reconstruct objective. We find models which optimize the composite objective have representations which IT better than categorize alone. This is surprising, if strictly object recognition best describes the objective of visual processing in the ventral stream, optimizing an alternate objective should develop more poorly matching representations. However, this finding may help reconcile two observations at odds with the strictly object recognition hypothesis. First, it’s been shown that visual processing areas show matching activation patterns in response to both viewing a scene and mentally visualizing the same scene <span class="citation">(Stokes et al. <a href="references.html#ref-Stokes:2009kg" role="doc-biblioref">2009</a>, @OCraven:2000th, @Freud:2016dj, @Sereno:2011hq)</span>. Second, ventral stream areas explicitly retain information not useful for object recognition<span class="citation">(Hong et al. <a href="references.html#ref-Hong:2016cw" role="doc-biblioref">2016</a>)</span>.</p>
+<p>Half of nonhuman primate neocortex is devoted to visual processing <span class="citation">(Felleman and Van Essen <a href="references.html#ref-Felleman:1991tk" role="doc-biblioref">1991</a>)</span>, underscoring both its complexity and evolutionary importance. Furthermore, the ‘No free lunch theorems’ demonstrate objective function choice is not arbitrary; no learning algorithm performs well on all tasks. These pressures dictate an alternate objective choice, should have a compelling advantage. Our work suggests that an advantage such as noise robustness might explain why the alternate categorize and reconstruct objective provides a better match to IT representations.</p>
+</div>
+</div>
+<div id="deep-brain-stimulation" class="section level2" number="6.2">
+<h2><span class="header-section-number">6.2</span> Deep Brain Stimulation</h2>
+<p>Current neurostimulators are currently non-adaptive, limited by lack of robust methods for reading out a patient’s brain state necessary for adaptive neurostimulation. This work has also shown the promise of ANN’s as useful tool decoding information from neural activity. In chapter 3 we described our efforts to build such a model capable of detecting sleep stage from local field potential (LFP) recordings taken from DBS electrodes implanted in the subthalamic nucleus (STN). train an ANN classifier model to predict the sleep state of PD patients from spectral decomposition features in their local field potentials.</p>
 
-</div>
+<!-- # --- -->
+<!-- # chapter: 7 -->
+<!-- # knit: "bookdown::render_book" -->
+<!-- # --- -->
 </div>
 </div>
             </section>
@@ -160,8 +169,8 @@ This is not necessarily expected in a “pure” object recognition system, as t
           </div>
         </div>
       </div>
-<a href="ch3-jsr.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="ch5-jov.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch5-jov.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -183,7 +192,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/elijahc/thesis/edit/master/Rmd//04-chap4.Rmd",
+"link": "https://github.com/elijahc/thesis/edit/master/Rmd//06-chap6.Rmd",
 "text": "Edit"
 },
 "history": {

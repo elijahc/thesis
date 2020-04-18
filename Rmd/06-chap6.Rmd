@@ -1,0 +1,30 @@
+---
+chapter: 6
+knit: "bookdown::render_book"
+---
+
+# (DRAFT) Single Units to Brain-wide States {#ch5:discussion}
+
+
+## Abstract {-}
+
+A persisting challenge in neuroscience is to bridge the gap between the complex tasks we know brains can perform and the physical components (neurons) that enable them. In vision, this divide is particularly wide, and much effort has been devoted to understanding how our brain processes visual information. For instance, we know the visual cortex receives complex spatiotemporal patterns of light relayed by the retina and reformats these patterns to infer what caused them (i.e. the identity of the object present) [@DiCarlo:2012em]. Answering this question requires first understanding how visual information is encoded at each sequential stage of processing along brain areas in visual cortex. Computational modeling has much to offer neuroscience in addressing this knowledge gap. One approach is to build computational models to replicate the neural encoding which takes place when the brain receives sensory stimuli.
+
+## Modeling Neural Encoding with ANN's
+
+### Predicting Single Units
+
+At the most granular level, information is encoded in the spiking activities of individual neurons. Traditional systems neuroscience approaches have advanced our understanding neural encoding by providing explanations for what individual neurons compute. In visual systems neuroscience, Hubel and Wiesel performed the seminal work in the field showing that individual simple and complex cells in primary visual cortex (V1) “tuned” to respond to oriented edges. This approach has worked well for cells that respond well to simple stimuli, but the encoding properties of many other cells in V1 are still unexplained [@Olshausen:2006fd].
+We demonstrate ANN’s trained with machine learning techniques are a robust model of neural encoding in V1 capable of accurately predicting single neuron responses to natural stimuli. Importantly, this model achieves equally good predictability for both orientation selective and non-orientation selective cells for natural image stimuli. We show this approach is a useful tool for studying responses properties of previously difficult to study cells in V1.
+
+### Objectively Useful
+
+David Marr proposed the idea that understanding the computational goals of visual processing is equally important and complementary to an understanding of the parts (e.g. individual neurons) that physically implement it. For early visual areas, efficient coding as a computational goal has been successful at explaining response properties of cells in primary visual cortex (V1) but has not worked as well at explaining responses in higher visual areas. The prevailing view for higher visual areas like inferior temporal cortex (IT) is that object recognition best describes its objective but directly testing this hypothesis is difficult.
+
+Questions of this nature are fundamentally challenging to test, especially when limited to only analyzing responses for a handful of neurons. Recent results have demonstrated ANN’s may be better suited for evaluating higher visual area objectives. Deep convolutional neural networks (DCNN’s) trained to categorize objects in images also develop internal representations which also match IT responses to natural images. It has been posited that matching representations could only arise if both the model and ventral stream are optimized for the same objective.  We tested this explanation by optimizing models for both image categorization and a composite categorize and reconstruct objective. We find models which optimize the composite objective have representations which IT better than categorize alone. This is surprising, if strictly object recognition best describes the objective of visual processing in the ventral stream, optimizing an alternate objective should develop more poorly matching representations. However, this finding may help reconcile two observations at odds with the strictly object recognition hypothesis. First, it’s been shown that visual processing areas show matching activation patterns in response to both viewing a scene and mentally visualizing the same scene [@Stokes:2009kg, @OCraven:2000th, @Freud:2016dj, @Sereno:2011hq]. Second, ventral stream areas explicitly retain information not useful for object recognition[@Hong:2016cw].
+
+Half of nonhuman primate neocortex is devoted to visual processing [@Felleman:1991tk], underscoring both its complexity and evolutionary importance. Furthermore, the ‘No free lunch theorems’ demonstrate objective function choice is not arbitrary; no learning algorithm performs well on all tasks. These pressures dictate an alternate objective choice, should have a compelling advantage. Our work suggests that an advantage such as noise robustness might explain why the alternate categorize and reconstruct objective provides a better match to IT representations.
+
+## Deep Brain Stimulation
+
+Current neurostimulators are currently non-adaptive, limited by lack of robust methods for reading out a patient’s brain state necessary for adaptive neurostimulation. This work has also shown the promise of ANN’s as useful tool decoding information from neural activity.  In chapter 3 we described our efforts to build such a model capable of detecting sleep stage from local field potential (LFP) recordings taken from DBS electrodes implanted in the subthalamic nucleus (STN).  train an ANN classifier model to predict the sleep state of PD patients from spectral decomposition features in their local field potentials.

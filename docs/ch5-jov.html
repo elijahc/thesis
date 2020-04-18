@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="ch-vae.html"/>
-<link rel="next" href="references.html"/>
+<link rel="next" href="ch5-discussion.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -92,6 +92,9 @@
 <li class="chapter" data-level="3" data-path="ch3-jsr.html"><a href="ch3-jsr.html"><i class="fa fa-check"></i><b>3</b> Predicting sleep state in human PD patients</a>
 <ul>
 <li class="chapter" data-level="" data-path="ch3-jsr.html"><a href="ch3-jsr.html#abstract"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="3.1" data-path="ch3-jsr.html"><a href="ch3-jsr.html#introduction"><i class="fa fa-check"></i><b>3.1</b> Introduction</a></li>
+<li class="chapter" data-level="3.2" data-path="ch3-jsr.html"><a href="ch3-jsr.html#methods"><i class="fa fa-check"></i><b>3.2</b> Methods</a></li>
+<li class="chapter" data-level="3.3" data-path="ch3-jsr.html"><a href="ch3-jsr.html#results"><i class="fa fa-check"></i><b>3.3</b> Results</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="ch-vae.html"><a href="ch-vae.html"><i class="fa fa-check"></i><b>4</b> Models of the ventral stream that visualize and categorize images</a>
 <ul>
@@ -101,8 +104,14 @@
 <li class="chapter" data-level="5" data-path="ch5-jov.html"><a href="ch5-jov.html"><i class="fa fa-check"></i><b>5</b> Predicting single unit responses in macaque V1</a>
 <ul>
 <li class="chapter" data-level="" data-path="ch5-jov.html"><a href="ch5-jov.html#abstract-2"><i class="fa fa-check"></i>Abstract</a></li>
-<li class="chapter" data-level="5.1" data-path="ch5-jov.html"><a href="ch5-jov.html#introduction"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
-<li class="chapter" data-level="5.2" data-path="ch5-jov.html"><a href="ch5-jov.html#methods"><i class="fa fa-check"></i><b>5.2</b> Methods</a></li>
+<li class="chapter" data-level="5.1" data-path="ch5-jov.html"><a href="ch5-jov.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
+<li class="chapter" data-level="5.2" data-path="ch5-jov.html"><a href="ch5-jov.html#methods-1"><i class="fa fa-check"></i><b>5.2</b> Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ch5-discussion.html"><a href="ch5-discussion.html"><i class="fa fa-check"></i><b>6</b> (DRAFT) Single Units to Brain-wide States</a>
+<ul>
+<li class="chapter" data-level="" data-path="ch5-discussion.html"><a href="ch5-discussion.html#abstract-3"><i class="fa fa-check"></i>Abstract</a></li>
+<li class="chapter" data-level="6.1" data-path="ch5-discussion.html"><a href="ch5-discussion.html#modeling-neural-encoding-with-anns"><i class="fa fa-check"></i><b>6.1</b> Modeling Neural Encoding with ANN’s</a></li>
+<li class="chapter" data-level="6.2" data-path="ch5-discussion.html"><a href="ch5-discussion.html#deep-brain-stimulation"><i class="fa fa-check"></i><b>6.2</b> Deep Brain Stimulation</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>REFERENCES</a></li>
 <li class="divider"></li>
@@ -137,11 +146,11 @@
 <h2>Abstract</h2>
 <p>Primary visual cortex (V1) is the first stage of cortical image processing, and major effort in systems neuroscience is devoted to understanding how it encodes information about visual stimuli. Within V1, many neurons respond selectively to edges of a given preferred orientation: These are known as either simple or complex cells. Other neurons respond to localized center–surround image features. Still others respond selectively to certain image stimuli, but the specific features that excite them are unknown. Moreover, even for the simple and complex cells—the best-understood V1 neurons—it is challenging to predict how they will respond to natural image stimuli. Thus, there are important gaps in our understanding of how V1 encodes images. To fill this gap, we trained deep convolutional neural networks to predict the firing rates of V1 neurons in response to natural image stimuli, and we find that the predicted firing rates are highly correlated (<span class="math inline">\(CC_{norm}\)</span> = 0.556 ± 0.01) with the neurons’ actual firing rates over a population of 355 neurons. This performance value is quoted for all neurons, with no selection filter. Performance is better for more active neurons: When evaluated only on neurons with mean firing rates above 5 Hz, our predictors achieve correlations of <span class="math inline">\(CC_{norm}\)</span> = 0.69 ± 0.01 with the neurons’ true firing rates. We find that the firing rates of both orientation-selective and non-orientation-selective neurons can be predicted with high accuracy. Additionally, we use a variety of models to benchmark performance and find that our convolutional neural-network model makes more accurate predictions.</p>
 </div>
-<div id="introduction" class="section level2" number="5.1">
+<div id="introduction-1" class="section level2" number="5.1">
 <h2><span class="header-section-number">5.1</span> Introduction</h2>
 <p>Our ability to see arises because of the activity evoked in our brains as we view the world around us. Ever since Hubel and Wiesel (1959) mapped the flow of visual information from the retina to thalamus and then cortex, understanding how these different regions encode and process visual information has been a major focus of visual systems neuroscience. In the first cortical layer of visual processing—primary visual cortex (V1)—Hubel and Wiesel identified neurons that respond to oriented edges within image stimuli. These are called simple or complex cells, depending on how sensitive their responses are to shifts in the position of the edge. The simple and complex cells are well studied (Lehky, Sejnowski, &amp; Desimone, 1992; David, Vinje, &amp; Gallant, 2004; Montijn, Meijer, Lansink, &amp; Pennartz, 2016). However, many V1 neurons are neither simple nor complex cells, and the classical models of simple and complex cells often fail to predict how those neurons will respond to naturalistic stimuli (Olshausen &amp; Field, 2005). Thus, much of how V1 encodes visual information remains unknown. We use deep learning to address this longstanding problem.</p>
 </div>
-<div id="methods" class="section level2" number="5.2">
+<div id="methods-1" class="section level2" number="5.2">
 <h2><span class="header-section-number">5.2</span> Methods</h2>
 <div id="experimental-data" class="section level3" number="5.2.1">
 <h3><span class="header-section-number">5.2.1</span> Experimental Data</h3>
@@ -153,10 +162,6 @@ Figure 5.1: Experimental data collection and processing.
 </p>
 </div>
 
-<!-- # --- -->
-<!-- # chapter: 7 -->
-<!-- # knit: "bookdown::render_book" -->
-<!-- # --- -->
 </div>
 </div>
 </div>
@@ -172,7 +177,7 @@ Figure 5.1: Experimental data collection and processing.
         </div>
       </div>
 <a href="ch-vae.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="references.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch5-discussion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
