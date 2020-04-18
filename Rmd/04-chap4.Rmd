@@ -5,6 +5,10 @@ knit: "bookdown::render_book"
 
 # Models of the ventral stream that visualize and categorize images {#ch:vae}
 
+> The work presented in this chapter is not yet published, but a [preprint](https://www.biorxiv.org/content/10.1101/2020.02.21.958488v1) is available (see below)
+
+* [pdf](vae.pdf)
+
 ## Abstract {-}
 
 The ventral stream (VS) of visual cortex begins in primary visual cortex (V1), ends in inferior temporal cortex (IT), and is essential for object recognition.
