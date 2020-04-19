@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>List of Abbreviations | Computational Models of Neural Encoding in Vision and Neurostimulation</title>
-  <meta name="description" content="List of Abbreviations | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <title>CH 5 Predicting single unit responses in macaque V1 | Computational Models of Neural Encoding in Vision and Neurostimulation</title>
+  <meta name="description" content="CH 5 Predicting single unit responses in macaque V1 | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="List of Abbreviations | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta property="og:title" content="CH 5 Predicting single unit responses in macaque V1 | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="List of Abbreviations | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta name="twitter:title" content="CH 5 Predicting single unit responses in macaque V1 | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   
   
   
@@ -30,8 +30,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="acknowledgements.html"/>
-<link rel="next" href="preface.html"/>
+<link rel="prev" href="ch-vae.html"/>
+<link rel="next" href="ch5-discussion.html"/>
 <script src="libs/header-attrs-2.1/header-attrs.js"></script>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -135,32 +135,42 @@
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="list-of-abbreviations" class="section level1 unnumbered" number="">
-<h1>List of Abbreviations</h1>
-<dl>
-<dt>ANN</dt>
-<dd><p>Artificial Neural Network</p>
-</dd>
-<dt>(D)CNN</dt>
-<dd><p>(Deep) Convolutional Neural Network</p>
-</dd>
-<dt>DBS</dt>
-<dd><p>Deep Brain Stimulation</p>
-</dd>
-<dt>LGN</dt>
-<dd><p>Lateral Geniculate Nucleus of the Thalamus</p>
-</dd>
-<dt>ML</dt>
-<dd><p>Machine Learning</p>
-</dd>
-<dt>V1</dt>
-<dd><p>Primary Visual Cortex</p>
-</dd>
-<dt>V2</dt>
-<dd><p>Visual Cortex Area V2</p>
-</dd>
-</dl>
+<div id="ch:jov" class="section level1" number="5">
+<h1><span class="header-section-number">CH 5</span> Predicting single unit responses in macaque V1</h1>
+<blockquote>
+<p>The contents of this chapter are available in <a href="https://doi.org/10.1167/19.4.29">Using deep learning to probe the neural code for images in primary visual cortex</a><a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a></p>
+</blockquote>
+<ul>
+<li>[<a href="https://github.com/jzlab/v1_predictor">Source Code</a>]</li>
+</ul>
+<div id="abstract-2" class="section level2 unnumbered" number="">
+<h2>Abstract</h2>
+<p>Primary visual cortex (V1) is the first stage of cortical image processing, and major effort in systems neuroscience is devoted to understanding how it encodes information about visual stimuli. Within V1, many neurons respond selectively to edges of a given preferred orientation: These are known as either simple or complex cells. Other neurons respond to localized center–surround image features. Still others respond selectively to certain image stimuli, but the specific features that excite them are unknown. Moreover, even for the simple and complex cells—the best-understood V1 neurons—it is challenging to predict how they will respond to natural image stimuli. Thus, there are important gaps in our understanding of how V1 encodes images. To fill this gap, we trained deep convolutional neural networks to predict the firing rates of V1 neurons in response to natural image stimuli, and we find that the predicted firing rates are highly correlated (<span class="math inline">\(CC_{norm}\)</span> = 0.556 ± 0.01) with the neurons’ actual firing rates over a population of 355 neurons. This performance value is quoted for all neurons, with no selection filter. Performance is better for more active neurons: When evaluated only on neurons with mean firing rates above 5 Hz, our predictors achieve correlations of <span class="math inline">\(CC_{norm}\)</span> = 0.69 ± 0.01 with the neurons’ true firing rates. We find that the firing rates of both orientation-selective and non-orientation-selective neurons can be predicted with high accuracy. Additionally, we use a variety of models to benchmark performance and find that our convolutional neural-network model makes more accurate predictions.</p>
+</div>
+<div id="introduction-1" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Introduction</h2>
+<p>Our ability to see arises because of the activity evoked in our brains as we view the world around us. Ever since Hubel and Wiesel (1959) mapped the flow of visual information from the retina to thalamus and then cortex, understanding how these different regions encode and process visual information has been a major focus of visual systems neuroscience. In the first cortical layer of visual processing—primary visual cortex (V1)—Hubel and Wiesel identified neurons that respond to oriented edges within image stimuli. These are called simple or complex cells, depending on how sensitive their responses are to shifts in the position of the edge. The simple and complex cells are well studied (Lehky, Sejnowski, &amp; Desimone, 1992; David, Vinje, &amp; Gallant, 2004; Montijn, Meijer, Lansink, &amp; Pennartz, 2016). However, many V1 neurons are neither simple nor complex cells, and the classical models of simple and complex cells often fail to predict how those neurons will respond to naturalistic stimuli (Olshausen &amp; Field, 2005). Thus, much of how V1 encodes visual information remains unknown. We use deep learning to address this longstanding problem.</p>
+</div>
+<div id="methods-1" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Methods</h2>
+<div id="experimental-data" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Experimental Data</h3>
+<p>Neural activity was recorded in monkeys’ V1 as they were shown a series of images (Fig <a href="ch-jov.html#fig:5-1">5.1</a>A). The image set contains 270 circularly cropped natural images (Fig <a href="ch-jov.html#fig:5-1">5.1</a>B). (C) The response of a single neuron over repeated presentations of an image. Ticks indicate the neuron’s spiking; each row corresponds to a different image-presentation trial. During the response window, the firing rate is computed and then averaged over trials to yield the average response <span class="math inline">\(A_{n,i}\)</span> used in our analysis. (D) The neuron responds to image stimuli with a latency of ∼50 ms from the image onset at t = 0, as seen in the peristimulus time histogram (firing rate plotted against time, averaged over all 270 images).</p>
+<div class="figure" style="text-align: center"><span id="fig:5-1"></span>
+<img src="img/figure_5.1.png" alt="Experimental data collection and processing." width="75%" />
+<p class="caption">
+Figure 5.1: Experimental data collection and processing.
+</p>
+</div>
 
+</div>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="3">
+<li id="fn3"><p>This chapter was previously published in <span class="citation">(Kindel, Christensen, and Zylberberg <a href="references.html#ref-Kindel:2019et" role="doc-biblioref">2019</a>)</span> <em>Journal of Vision</em> and is included with permission from the copyright holder<a href="ch-jov.html#fnref3" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
 <script type="application/json" class="js-hypothesis-config">
 
@@ -174,8 +184,8 @@
           </div>
         </div>
       </div>
-<a href="acknowledgements.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="preface.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="ch-vae.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="ch5-discussion.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -197,7 +207,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/elijahc/thesis/edit/master/Rmd//00-1-abbreviations.Rmd",
+"link": "https://github.com/elijahc/thesis/edit/master/Rmd//05-chap5.Rmd",
 "text": "Edit"
 },
 "history": {

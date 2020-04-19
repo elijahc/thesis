@@ -3,7 +3,7 @@ chapter: 3
 knit: "bookdown::render_book"
 ---
 
-# Predicting sleep state in human PD patients^[Extra footnote] {#ch3:jsr}
+# Predicting sleep state in human PD patients^[Extra footnote] {#ch:jsr}
 
 * The contents of this chapter are available in [Inferring sleep stage from local field potentials recorded in the subthalamic nucleus of Parkinson’s patients.](https://doi.org/10.1111/jsr.12806)^[This chapter was previously published in [@Christensen:2019ik] Journal of Sleep Research and is included with permission from the copyright holder]
 
