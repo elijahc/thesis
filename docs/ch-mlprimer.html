@@ -71,6 +71,7 @@
 <li class="divider"></li>
 <li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a></li>
 <li class="chapter" data-level="" data-path="acknowledgements.html"><a href="acknowledgements.html"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="list-of-abbreviations.html"><a href="list-of-abbreviations.html"><i class="fa fa-check"></i>List of Abbreviations</a></li>
 <li class="chapter" data-level="" data-path="preface.html"><a href="preface.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="1" data-path="ch-intro.html"><a href="ch-intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
 <ul>
@@ -147,8 +148,11 @@ Figure 2.1: Synaptically connected neurons in the brain are the substrate of neu
 <div id="sec:artificialunits" class="section level2" number="2.1">
 <h2><span class="header-section-number">2.1</span> Artificial Units</h2>
 <p>Artificial units (Fig <a href="ch-mlprimer.html#fig:fig2-1">2.2</a>B) are the basic building block of artificial neural networks. Each artificial unit receives input represented as a sequence of inputs <span class="math inline">\(x_i\)</span> and each input has a corresponding synaptic weight <span class="math inline">\(w_i\)</span>. The membrane potential <span class="math inline">\(z\)</span> of the artificial unit is represented by adding net dendritic input to a scalar bias term <span class="math inline">\(b\)</span> which represents intrinsic excitability. Finally, the threshold non-linear response of biological neurons is captured by passing the units membrane potential <span class="math inline">\(z\)</span> through an activation function <span class="math inline">\(g\)</span> which gives the unit output firing rate, or “activation”, <span class="math inline">\(a\)</span>.</p>
-<p><span class="math display">\[
+<p><span class="math display" id="eq:scalar">\[
+\begin{equation}
 a = g(z) = g(\sum_{i}{w_i x_i}+b)
+\tag{2.1}
+\end{equation}
 \]</span></p>
 </div>
 <div id="sec:layers" class="section level2" number="2.2">

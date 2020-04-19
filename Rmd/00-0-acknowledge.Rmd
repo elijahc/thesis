@@ -6,4 +6,9 @@ knit: "bookdown::render_book"
 
 Special thanks to Alon Poleg-Polsky for thoughtful discussion and direction and to Gidon Felsen for providing a place to call home.
 
-I would like to thank my support by the Department of Defense (DoD) through the National Defense Science & Engineering Graduate Fellowship (NDSEG) Program as well as by the Canada First Research Excellence Fund (CFREF) and York University. 
+The contribution in chapter 3 was published in _Journal of Sleep Research_ by @Christensen:2019ik.
+EC, JZ, JAT and AA were responsible for conception and design of the study. AA acquired the data. EC and JZ conceived the model and developed the code for its application. EC, JZ and JAT analyzed and interpreted the data. EC and JAT drafted the manuscript. EC, AA, JZ and JAT critically revised the manuscript.
+
+The contribution in chapter 5 was published in _Journal of Vision_ by @Kindel:2019et. WK and JZ conceived the original project. EC and WK analyzed and interpreted the data. WK and EC drafted the manuscript. EC, WK, and JZ critically revised the manuscript.
+
+I would also like to thank my support by the Department of Defense (DoD) through the National Defense Science & Engineering Graduate Fellowship (NDSEG) Program as well as by the Canada First Research Excellence Fund (CFREF) and York University. 
