@@ -1,0 +1,33 @@
+---
+knit: "bookdown::render_book"
+---
+
+# List of Abbreviations {-}
+
+ANN
+
+:   Artificial Neural Network
+
+(D)CNN
+
+:   (Deep) Convolutional Neural Network
+
+DBS
+
+:   Deep Brain Stimulation
+
+LGN
+
+:   Lateral Geniculate Nucleus of the Thalamus
+
+ML
+
+:   Machine Learning
+
+V1
+
+:   Primary Visual Cortex
+
+V2
+
+:   Visual Cortex Area V2
