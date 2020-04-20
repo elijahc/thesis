@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>CH 6 (DRAFT) Single Units to Brain-wide States | Computational Models of Neural Encoding in Vision and Neurostimulation</title>
-  <meta name="description" content="CH 6 (DRAFT) Single Units to Brain-wide States | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <title>CH 6 Single Units to Brain-wide States | Computational Models of Neural Encoding in Vision and Neurostimulation</title>
+  <meta name="description" content="CH 6 Single Units to Brain-wide States | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   <meta name="generator" content="bookdown 0.18 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="CH 6 (DRAFT) Single Units to Brain-wide States | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta property="og:title" content="CH 6 Single Units to Brain-wide States | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="CH 6 (DRAFT) Single Units to Brain-wide States | Computational Models of Neural Encoding in Vision and Neurostimulation" />
+  <meta name="twitter:title" content="CH 6 Single Units to Brain-wide States | Computational Models of Neural Encoding in Vision and Neurostimulation" />
   
   
   
@@ -107,11 +107,12 @@
 <li class="chapter" data-level="5.1" data-path="ch-jov.html"><a href="ch-jov.html#introduction-1"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
 <li class="chapter" data-level="5.2" data-path="ch-jov.html"><a href="ch-jov.html#methods-1"><i class="fa fa-check"></i><b>5.2</b> Methods</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="ch5-discussion.html"><a href="ch5-discussion.html"><i class="fa fa-check"></i><b>6</b> (DRAFT) Single Units to Brain-wide States</a>
+<li class="chapter" data-level="6" data-path="ch5-discussion.html"><a href="ch5-discussion.html"><i class="fa fa-check"></i><b>6</b> Single Units to Brain-wide States</a>
 <ul>
 <li class="chapter" data-level="" data-path="ch5-discussion.html"><a href="ch5-discussion.html#abstract-3"><i class="fa fa-check"></i>Abstract</a></li>
 <li class="chapter" data-level="6.1" data-path="ch5-discussion.html"><a href="ch5-discussion.html#modeling-neural-encoding-with-anns"><i class="fa fa-check"></i><b>6.1</b> Modeling Neural Encoding with ANN’s</a></li>
 <li class="chapter" data-level="6.2" data-path="ch5-discussion.html"><a href="ch5-discussion.html#deep-brain-stimulation"><i class="fa fa-check"></i><b>6.2</b> Deep Brain Stimulation</a></li>
+<li class="chapter" data-level="6.3" data-path="ch5-discussion.html"><a href="ch5-discussion.html#ann-models-are-useful-across-a-wide-range-of-physiologic-scales"><i class="fa fa-check"></i><b>6.3</b> ANN models are useful across a wide range of physiologic scales</a></li>
 </ul></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>REFERENCES</a></li>
 <li class="divider"></li>
@@ -135,7 +136,7 @@
 
             <section class="normal" id="section-">
 <div id="ch5:discussion" class="section level1" number="6">
-<h1><span class="header-section-number">CH 6</span> (DRAFT) Single Units to Brain-wide States</h1>
+<h1><span class="header-section-number">CH 6</span> Single Units to Brain-wide States</h1>
 <div id="abstract-3" class="section level2 unnumbered" number="">
 <h2>Abstract</h2>
 <p>A persisting challenge in neuroscience is to bridge the gap between the complex tasks we know brains can perform and the physical components (neurons) that enable them. In vision, this divide is particularly wide, and much effort has been devoted to understanding how our brain processes visual information. For instance, we know the visual cortex receives complex spatiotemporal patterns of light relayed by the retina and reformats these patterns to infer what caused them (i.e. the identity of the object present) <span class="citation">(DiCarlo, Zoccolan, and Rust <a href="references.html#ref-DiCarlo:2012em" role="doc-biblioref">2012</a>)</span>. Answering this question requires first understanding how visual information is encoded at each sequential stage of processing along brain areas in visual cortex. Computational modeling has much to offer neuroscience in addressing this knowledge gap. One approach is to build computational models to replicate the neural encoding which takes place when the brain receives sensory stimuli.</p>
@@ -156,7 +157,11 @@ We demonstrate ANN’s trained with machine learning techniques are a robust mod
 </div>
 <div id="deep-brain-stimulation" class="section level2" number="6.2">
 <h2><span class="header-section-number">6.2</span> Deep Brain Stimulation</h2>
-<p>Current neurostimulators are currently non-adaptive, limited by lack of robust methods for reading out a patient’s brain state necessary for adaptive neurostimulation. This work has also shown the promise of ANN’s as useful tool decoding information from neural activity. In chapter 3 we described our efforts to build such a model capable of detecting sleep stage from local field potential (LFP) recordings taken from DBS electrodes implanted in the subthalamic nucleus (STN). train an ANN classifier model to predict the sleep state of PD patients from spectral decomposition features in their local field potentials.</p>
+<p>Current neurostimulators are non-adaptive, limited by lack of robust methods for reading out a patient’s brain state necessary for adaptive neurostimulation. This work has also shown the promise of ANN’s as useful tool decoding information from neural activity. In chapter 3 we described our efforts to build such a model capable of detecting sleep stage from local field potential (LFP) recordings taken from DBS electrodes implanted in the subthalamic nucleus (STN). In this work we trained an ANN classifier model to predict the sleep state of PD patients from spectral decomposition features in their local field potentials.</p>
+</div>
+<div id="ann-models-are-useful-across-a-wide-range-of-physiologic-scales" class="section level2" number="6.3">
+<h2><span class="header-section-number">6.3</span> ANN models are useful across a wide range of physiologic scales</h2>
+<p>In this work we leverage ANN models as a powerful tool to improve our understanding of neural encoding, predicting brain-wide states, replicating population response properties in IT, and predicting individual neuron responses to stimuli. We demonstrate the objective best describing higher visual areas may be more complex than solely object recognition; and show why this may be important for practical reasons. While these findings have extended our understanding of visual encoding, there is still important work to be done to make more accurate models of cortical visual processing. For instance, the brain’s visual processing system is optimized to operate on sequences of images (e.g. video) and not just a single snapshot. The model’s described in this work do not take advantage of extra information present in the time domain of video and future models will likely take advantage of this kind of information.</p>
 
 <!-- # --- -->
 <!-- # chapter: 7 -->
