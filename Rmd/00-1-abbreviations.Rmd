@@ -24,6 +24,10 @@ ML
 
 :   Machine Learning
 
+RGC
+
+:   Retinal Ganglion Cell; RGC's cover the back of the retina and their axons bundled together comprise the optic nerves which carry visual information from the eyes to the brain.
+
 V1
 
 :   Primary Visual Cortex

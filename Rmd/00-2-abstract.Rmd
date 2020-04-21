@@ -1,0 +1,11 @@
+---
+knit: "bookdown::render_book"
+---
+
+# Preface {-}
+
+There is a significant need for more effective treatments for neurological and psychiatric disease. Implantable neurostimulators are increasingly used as new therapeutic options for these diseases but current devices have several limitations.
+
+Current deep brain stimulators use an open-loop configuration which produces unwanted side-effects and needlessly drain power. However, modulating stimulation adaptively or close-loop stimulation requires accurate methods to readout physiologically relevant brain states, preferable using only the already implanted electrodes. Cortical prosthetics, another class of implanted neurostimulators, rely on accurate predictions of neural activity in the targeted brain area for arbitrary stimuli. Classical models used to predict neural activity in primary visual cortex only achieve 35% predictability overall and declines with each successive area of visual processing.
+
+This work highlights several advantages of using deep artificial neural network (ANN) models as tools in neuroscience for studying neural encoding and decoding. We apply an ANN model trained using supervised learning to decode sleep state continuously from “spectral fingerprints” contained in local field potential activity. Furthermore, we show deep convolutional neural networks can be used to make more accurate predictions of cortical neural encoding of visual stimuli in both early (primary visual cortex) and late (inferior temporal cortex) stages of visual processing
